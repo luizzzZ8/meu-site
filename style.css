@@ -2,12 +2,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #00cc66;
   color: white;
   padding: 2rem;
   text-align: center;
@@ -26,7 +26,7 @@ h1, h2 {
 }
 
 a {
-  color: #4CAF50;
+  color: #00cc66;
   text-decoration: none;
 }
 
@@ -35,8 +35,39 @@ a:hover {
 }
 
 footer {
-  background-color: #ddd;
+  background-color: #1a1a1a;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  color: #888;
+}
+
+.aviso {
+  background-color: #cc0000;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+}
+
+.jogos {
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.contato {
+  text-align: center;
 }
