@@ -2,33 +2,37 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sniper Elite v2 - Venda</title>
+    <title>XBOX 360 NEVEX - Loja de Jogos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-    <div class="logo">JOGOS 360 NEVEX</div>
+<header>
+    <div class="logo">XBOX 360 NEVEX</div>
+    <div class="cart-icon">🛒</div>
 </header>
 
 <main class="container">
-    <section class="product">
-        <img src="sniper-elite.jpg" alt="Sniper Elite 4" class="product-image">
-        <h1 class="product-title">Sniper Elite v2</h1>
-        <p class="product-price">R$ 20,00</p>
+    <div class="product">
+        <img src="sniper-elite.jpg" alt="Eniper Elite v2" class="product-image">
+        <h1>Eniper Elite v2</h1>
+        <p class="price">R$ 20,00</p>
+        <button id="buyButton">Comprar</button>
+    </div>
 
-        <button id="buyButton" class="buy-button">Comprar</button>
+    <div id="confirmation" style="display: none;">
+        <h2>Confirmação de Compra</h2>
+        <p><strong>Produto:</strong> Eniper Elite v2</p>
+        <p><strong>Valor:</strong> R$ 20,00</p>
+        <p><strong>Descrição:</strong> Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
+        <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
+        <img src="qrcode-pix.png" alt="QR Code Pix" class="qr-code">
+        <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
 
-        <div id="confirmation" style="display: none;" class="confirmation">
-            <h2>Confirmação de Compra</h2>
-            <p>Produto: Sniper Elite v2</p>
-            <p>Valor: R$ 20,00</p>
-            <p>Chave Pix: seu-email@pix.com</p>
-            <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+v2+e+já+enviei+o+pagamento%21" target="_blank">
-                <button class="whatsapp-button">Chamar no WhatsApp</button>
-            </a>
-        </div>
-    </section>
+        <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Eniper+Elite+v2+e+enviei+o+Pix%21" target="_blank">
+            <button class="whatsapp-button">Chamar no WhatsApp</button>
+        </a>
+    </div>
 </main>
 
 <script>
@@ -39,6 +43,12 @@
         buyButton.style.display = 'none';
         confirmation.style.display = 'block';
     });
+
+    function copyPix() {
+        navigator.clipboard.writeText("417.710.408-66").then(() => {
+            alert('Chave Pix copiada!');
+        });
+    }
 </script>
 
 </body>
