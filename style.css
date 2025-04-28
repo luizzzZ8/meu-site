@@ -1,73 +1,85 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0d0d0d;
-  color: #f0f0f0;
+  background-color: #0f0f0f;
+  color: #ffffff;
 }
 
 header {
-  background-color: #00cc66;
-  color: white;
-  padding: 2rem;
+  background-color: #00a000;
+  padding: 20px;
   text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 main {
-  padding: 2rem;
+  padding: 20px;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
-h1, h2 {
-  margin: 0 0 1rem;
-}
-
-a {
-  color: #00cc66;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
+.produto {
   background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  color: #888;
+  margin-bottom: 20px;
+}
+
+.produto img {
+  width: 250px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.preco {
+  color: #ff0000;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.descricao {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.botao-pagar {
+  display: inline-block;
+  background-color: #00a000;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.botao-pagar:hover {
+  background-color: #007500;
 }
 
 .aviso {
-  background-color: #cc0000;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.btn-whatsapp {
-  display: inline-block;
-  background-color: #25d366;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-.btn-whatsapp:hover {
-  background-color: #128c7e;
-}
-
-.jogos {
-  background-color: #111;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.contato {
+  background-color: #ff0000;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
   text-align: center;
+  font-weight: bold;
+}
+
+.pagamento {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #00a000;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
 }
