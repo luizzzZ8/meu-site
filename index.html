@@ -8,24 +8,56 @@
 </head>
 <body>
     <header>
-        <div class="logo">XBOX 360 NEVEX</div>
+        <div class="logo" onclick="goHome()">XBOX 360 NEVEX</div>
         <nav class="navbar">
-            <a href="index.html">Início</a>  <!-- Mudou de Home para Início -->
+            <a href="#" onclick="goHome()">Home</a>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
         </nav>
     </header>
 
     <main class="container">
-        <div class="product-grid">
-            <!-- Produto 1 -->
-            <div class="product">
-                <img src="sniper-elite.jpg" alt="Sniper Elite v2" class="product-image">
-                <h2>Sniper Elite v2</h2>
-                <p class="price">R$ 20,00</p>
-                <button class="buyButton" onclick="showConfirmation('Sniper Elite v2', 20, 'sniper-elite')">Comprar</button>
+        <h2>Catálogo de Jogos</h2>
+        <div class="categories">
+            <!-- Categoria de Ação -->
+            <div class="category">
+                <h3>Ação</h3>
+                <div class="product">
+                    <img src="sniper-elite.jpg" alt="Sniper Elite v2" class="product-image">
+                    <h2>Sniper Elite v2</h2>
+                    <p class="price">R$ 20,00</p>
+                    <button class="buyButton" onclick="showConfirmation('Sniper Elite v2', 20, 'sniper-elite')">Comprar</button>
+                </div>
             </div>
-            <!-- Adicione mais produtos aqui se necessário -->
+
+            <!-- Categoria de Legos -->
+            <div class="category">
+                <h3>Legos</h3>
+                <div class="product">
+                    <img src="lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS" class="product-image">
+                    <h2>LEGO Star Wars: TCS</h2>
+                    <p class="price">R$ 15,00</p> <!-- Preço alterado -->
+                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars: TCS', 15, 'lego-star-wars-tcs')">Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="lego-star-wars-ii.jpg" alt="LEGO Star Wars II" class="product-image">
+                    <h2>LEGO Star Wars II</h2>
+                    <p class="price">R$ 30,00</p> <!-- Preço alterado -->
+                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars II', 30, 'lego-star-wars-ii')">Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="lego-star-wars-iii.jpg" alt="LEGO Star Wars III" class="product-image">
+                    <h2>LEGO Star Wars III</h2>
+                    <p class="price">R$ 40,00</p> <!-- Preço alterado -->
+                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars III', 40, 'lego-star-wars-iii')">Comprar</button>
+                </div>
+            </div>
+
+            <!-- Categoria de Tiro (você pode adicionar mais jogos aqui) -->
+            <div class="category">
+                <h3>Tiro</h3>
+                <!-- Outros jogos de tiro podem ser adicionados aqui -->
+            </div>
         </div>
 
         <div id="confirmation" class="confirmation-box" style="display: none;">
@@ -34,7 +66,6 @@
             <p><strong>Valor:</strong> R$ <span id="product-price"></span></p>
             <p><strong>Descrição:</strong> Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
             <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
-            <img id="qrcode" src="" alt="QR Code Pix" class="qr-code">
             <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
             <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+v2+e+enviei+o+Pix%21" target="_blank">
                 <button class="whatsapp-button">Chamar no WhatsApp</button>
@@ -44,14 +75,8 @@
 
     <script>
         function showConfirmation(productName, price, image) {
-            // Atualiza os dados do produto na confirmação
             document.getElementById('product-name').textContent = productName;
             document.getElementById('product-price').textContent = price;
-
-            // Atualiza a imagem do QR Code com base no nome da imagem do produto
-            document.getElementById('qrcode').src = `images/qrcode-${image}.png`; // Caminho para a imagem do QR Code
-
-            // Exibe a confirmação e esconde o botão de compra
             document.querySelector('.buyButton').style.display = 'none';
             document.getElementById('confirmation').style.display = 'block';
         }
@@ -60,6 +85,11 @@
             navigator.clipboard.writeText("417.710.408-66").then(() => {
                 alert('Chave Pix copiada!');
             });
+        }
+
+        // Função para voltar para o início ao clicar na logo ou no botão "Home"
+        function goHome() {
+            window.location.href = "#"; // Retorna para o topo da página
         }
     </script>
 </body>
