@@ -2,38 +2,44 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sniper Elite v2 - Venda</title>
+    <title>Sniper Elite 4 - Venda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sniper Elite v2</h1>
+
+<header class="header">
+    <div class="logo">LOJA GAMES</div>
+</header>
+
+<main class="container">
+    <section class="product">
         <img src="sniper-elite.jpg" alt="Sniper Elite 4" class="product-image">
+        <h1 class="product-title">Sniper Elite 4</h1>
+        <p class="product-price">R$ 20,00</p>
 
-        <p class="price">R$ 20,00</p>
+        <button id="buyButton" class="buy-button">Comprar</button>
 
-        <button id="buyButton">Comprar</button>
-
-        <div id="confirmation" style="display: none;">
+        <div id="confirmation" style="display: none;" class="confirmation">
             <h2>Confirmação de Compra</h2>
             <p>Produto: Sniper Elite 4</p>
             <p>Valor: R$ 20,00</p>
             <p>Chave Pix: seu-email@pix.com</p>
-
             <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+4+e+já+enviei+o+pagamento%21" target="_blank">
                 <button class="whatsapp-button">Chamar no WhatsApp</button>
             </a>
         </div>
-    </div>
+    </section>
+</main>
 
-    <script>
-        const buyButton = document.getElementById('buyButton');
-        const confirmation = document.getElementById('confirmation');
+<script>
+    const buyButton = document.getElementById('buyButton');
+    const confirmation = document.getElementById('confirmation');
 
-        buyButton.addEventListener('click', function() {
-            buyButton.style.display = 'none';
-            confirmation.style.display = 'block';
-        });
-    </script>
+    buyButton.addEventListener('click', function() {
+        buyButton.style.display = 'none';
+        confirmation.style.display = 'block';
+    });
+</script>
+
 </body>
 </html>
