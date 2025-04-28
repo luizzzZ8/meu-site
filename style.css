@@ -1,48 +1,47 @@
 body {
-    background-color: #121212;
+    background-color: #111;
     color: white;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
     text-align: center;
     padding: 20px;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.container {
+    margin-top: 50px;
 }
 
-img {
+.product-image {
     width: 300px;
     height: auto;
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.2em;
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* agora o preço está branco */
 }
 
-.preco {
-    font-size: 1.5em;
-    color: white; /* agora o preço é branco */
-    margin: 10px 0;
-}
-
-a.botao-comprar, a.botao-confirmar {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #4CAF50;
+button {
+    background-color: #28a745;
     color: white;
-    text-decoration: none;
-    font-size: 1.2em;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-a.botao-comprar:hover, a.botao-confirmar:hover {
-    background-color: #45a049;
+button:hover {
+    background-color: #218838;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    margin-top: 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe5d;
 }
