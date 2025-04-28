@@ -39,7 +39,7 @@ body {
 
 .product-price {
     font-size: 24px;
-    color: #ff0000; /* preço em vermelho */
+    color: #fff; /* preço em branco */
     margin-bottom: 20px;
 }
 
