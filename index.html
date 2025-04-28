@@ -7,63 +7,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="logo">XBOX 360 NEVEX</div>
+        <nav class="navbar">
+            <a href="index.html">Início</a>  <!-- Mudou de Home para Início -->
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">XBOX 360 NEVEX</div>
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
-</header>
-
-<main class="container">
-    <div class="product-grid">
-        <!-- Produto 1 -->
-        <div class="product">
-            <img src="sniper-elite.jpg" alt="Sniper Elite v2" class="product-image">
-            <h2>Sniper Elite v2</h2>
-            <p class="price">R$ 20,00</p>
-            <button class="buyButton" onclick="showConfirmation('Sniper Elite v2', 20, 'sniper-elite')">Comprar</button>
+    <main class="container">
+        <div class="product-grid">
+            <!-- Produto 1 -->
+            <div class="product">
+                <img src="sniper-elite.jpg" alt="Sniper Elite v2" class="product-image">
+                <h2>Sniper Elite v2</h2>
+                <p class="price">R$ 20,00</p>
+                <button class="buyButton" onclick="showConfirmation('Sniper Elite v2', 20, 'sniper-elite')">Comprar</button>
+            </div>
+            <!-- Adicione mais produtos aqui se necessário -->
         </div>
 
-        <!-- Adicione mais produtos aqui se necessário -->
-    </div>
+        <div id="confirmation" class="confirmation-box" style="display: none;">
+            <h2>Confirmação de Compra</h2>
+            <p><strong>Produto:</strong> <span id="product-name"></span></p>
+            <p><strong>Valor:</strong> R$ <span id="product-price"></span></p>
+            <p><strong>Descrição:</strong> Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
+            <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
+            <img id="qrcode" src="" alt="QR Code Pix" class="qr-code">
+            <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
+            <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+v2+e+enviei+o+Pix%21" target="_blank">
+                <button class="whatsapp-button">Chamar no WhatsApp</button>
+            </a>
+        </div>
+    </main>
 
-    <div id="confirmation" class="confirmation-box" style="display: none;">
-        <h2>Confirmação de Compra</h2>
-        <p><strong>Produto:</strong> <span id="product-name"></span></p>
-        <p><strong>Valor:</strong> R$ <span id="product-price"></span></p>
-        <p><strong>Descrição:</strong> Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
-        <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
-        <img id="qrcode" src="" alt="QR Code Pix" class="qr-code">
-        <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
-        <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+v2+e+enviei+o+Pix%21" target="_blank">
-            <button class="whatsapp-button">Chamar no WhatsApp</button>
-        </a>
-    </div>
-</main>
+    <script>
+        function showConfirmation(productName, price, image) {
+            // Atualiza os dados do produto na confirmação
+            document.getElementById('product-name').textContent = productName;
+            document.getElementById('product-price').textContent = price;
 
-<script>
-    function showConfirmation(productName, price, image) {
-        // Atualiza os dados do produto na confirmação
-        document.getElementById('product-name').textContent = productName;
-        document.getElementById('product-price').textContent = price;
-        
-        // Atualiza a imagem do QR Code com base no nome da imagem do produto
-        document.getElementById('qrcode').src = `images/qrcode-${image}.png`; // Caminho para a imagem do QR Code
+            // Atualiza a imagem do QR Code com base no nome da imagem do produto
+            document.getElementById('qrcode').src = `images/qrcode-${image}.png`; // Caminho para a imagem do QR Code
 
-        // Exibe a confirmação e esconde o botão de compra
-        document.querySelector('.buyButton').style.display = 'none';
-        document.getElementById('confirmation').style.display = 'block';
-    }
+            // Exibe a confirmação e esconde o botão de compra
+            document.querySelector('.buyButton').style.display = 'none';
+            document.getElementById('confirmation').style.display = 'block';
+        }
 
-    function copyPix() {
-        navigator.clipboard.writeText("417.710.408-66").then(() => {
-            alert('Chave Pix copiada!');
-        });
-    }
-</script>
-
+        function copyPix() {
+            navigator.clipboard.writeText("417.710.408-66").then(() => {
+                alert('Chave Pix copiada!');
+            });
+        }
+    </script>
 </body>
 </html>
