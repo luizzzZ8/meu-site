@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sniper Elite V2 - XBOX 360 NEVEX</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sniper Elite V2 - Comprar</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <div class="logo"><a href="../index.html">XBOX 360 NEVEX</a></div>
-        <nav class="navbar">
-            <a href="../index.html">Início</a>
-            <a href="../#lego">Legos</a>
-            <a href="../#acao">Ação</a>
-            <a href="../sacola.html">Sacola</a>
-        </nav>
-    </header>
 
-    <main class="container">
-        <div class="product-detail">
-            <img src="../images/sniper-elite.jpg" alt="Sniper Elite V2" class="product-image">
-            <h2>Sniper Elite V2</h2>
-            <p class="price">R$ 20,00</p>
-            <p>Um dos melhores jogos de tiro tático para Xbox 360! Conta original com transferência de licença garantida.</p>
-            <button onclick="window.location.href='../pagamento.html'">Comprar Agora</button>
-        </div>
-    </main>
+<header>
+  <div class="logo" onclick="window.location.href='../index.html'">XBOX 360 NEVEX</div>
+  <nav class="navbar">
+    <a href="../index.html">Início</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="product">
+    <img src="../images/sniper-elite.jpg" alt="Sniper Elite V2" class="product-image">
+    <h2>Sniper Elite V2</h2>
+    <p class="price">R$ 20,00</p>
+    <p>Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
+    <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
+    <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
+    <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+V2+e+enviei+o+Pix%21" target="_blank">
+      <button class="whatsapp-button">Chamar no WhatsApp</button>
+    </a>
+  </div>
+</main>
+
+<script>
+  function copyPix() {
+    navigator.clipboard.writeText("417.710.408-66").then(() => {
+      alert('Chave Pix copiada!');
+    });
+  }
+</script>
+
 </body>
 </html>
