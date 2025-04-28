@@ -7,90 +7,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo" onclick="goHome()">XBOX 360 NEVEX</div>
-        <nav class="navbar">
-            <a href="#" onclick="goHome()">Home</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
 
-    <main class="container">
-        <h2>Catálogo de Jogos</h2>
-        <div class="categories">
-            <!-- Categoria de Ação -->
-            <div class="category">
-                <h3>Ação</h3>
-                <div class="product">
-                    <img src="sniper-elite.jpg" alt="Sniper Elite v2" class="product-image">
-                    <h2>Sniper Elite v2</h2>
-                    <p class="price">R$ 20,00</p>
-                    <button class="buyButton" onclick="showConfirmation('Sniper Elite v2', 20, 'sniper-elite')">Comprar</button>
-                </div>
+<header>
+    <div class="logo" onclick="location.href='index.html'">XBOX 360 NEVEX</div>
+    <nav class="navbar">
+        <a href="index.html">Início</a>
+        <a href="#legos">Legos</a>
+        <a href="#acao">Ação</a>
+        <div class="cart-icon" onclick="location.href='carrinho.html'">🛒</div>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section id="legos">
+        <h1>Jogos LEGO</h1>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS">
+                <h2>LEGO Star Wars: TCS</h2>
+                <p class="price">R$ 15,00</p>
+                <button onclick="location.href='pages/lego-tcs.html'">Comprar</button>
+                <button onclick="addToCart('LEGO Star Wars: TCS', 15)">Adicionar à Sacola</button>
             </div>
 
-            <!-- Categoria de Legos -->
-            <div class="category">
-                <h3>Legos</h3>
-                <div class="product">
-                    <img src="lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS" class="product-image">
-                    <h2>LEGO Star Wars: TCS</h2>
-                    <p class="price">R$ 15,00</p> <!-- Preço alterado -->
-                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars: TCS', 15, 'lego-star-wars-tcs')">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="lego-star-wars-ii.jpg" alt="LEGO Star Wars II" class="product-image">
-                    <h2>LEGO Star Wars II</h2>
-                    <p class="price">R$ 30,00</p> <!-- Preço alterado -->
-                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars II', 30, 'lego-star-wars-ii')">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="lego-star-wars-iii.jpg" alt="LEGO Star Wars III" class="product-image">
-                    <h2>LEGO Star Wars III</h2>
-                    <p class="price">R$ 40,00</p> <!-- Preço alterado -->
-                    <button class="buyButton" onclick="showConfirmation('LEGO Star Wars III', 40, 'lego-star-wars-iii')">Comprar</button>
-                </div>
+            <div class="product">
+                <img src="images/lego-star-wars-ii.jpg" alt="LEGO Star Wars II">
+                <h2>LEGO Star Wars II</h2>
+                <p class="price">R$ 30,00</p>
+                <button onclick="location.href='pages/lego-ii.html'">Comprar</button>
+                <button onclick="addToCart('LEGO Star Wars II', 30)">Adicionar à Sacola</button>
             </div>
 
-            <!-- Categoria de Tiro (você pode adicionar mais jogos aqui) -->
-            <div class="category">
-                <h3>Tiro</h3>
-                <!-- Outros jogos de tiro podem ser adicionados aqui -->
+            <div class="product">
+                <img src="images/lego-star-wars-iii.jpg" alt="LEGO Star Wars III">
+                <h2>LEGO Star Wars III</h2>
+                <p class="price">R$ 40,00</p>
+                <button onclick="location.href='pages/lego-iii.html'">Comprar</button>
+                <button onclick="addToCart('LEGO Star Wars III', 40)">Adicionar à Sacola</button>
             </div>
         </div>
+    </section>
 
-        <div id="confirmation" class="confirmation-box" style="display: none;">
-            <h2>Confirmação de Compra</h2>
-            <p><strong>Produto:</strong> <span id="product-name"></span></p>
-            <p><strong>Valor:</strong> R$ <span id="product-price"></span></p>
-            <p><strong>Descrição:</strong> Conta de Xbox 360 com transferência de licença ativa. Jogo original.</p>
-            <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
-            <button onclick="copyPix()">Copiar Chave Pix</button><br><br>
-            <a href="https://wa.me/5511939053090?text=Olá%2C+fiz+a+compra+do+Sniper+Elite+v2+e+enviei+o+Pix%21" target="_blank">
-                <button class="whatsapp-button">Chamar no WhatsApp</button>
-            </a>
+    <section id="acao">
+        <h1>Jogos de Ação</h1>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/sniper-elite.jpg" alt="Sniper Elite v2">
+                <h2>Sniper Elite v2</h2>
+                <p class="price">R$ 20,00</p>
+                <button onclick="location.href='pages/sniper-elite.html'">Comprar</button>
+                <button onclick="addToCart('Sniper Elite v2', 20)">Adicionar à Sacola</button>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <script>
-        function showConfirmation(productName, price, image) {
-            document.getElementById('product-name').textContent = productName;
-            document.getElementById('product-price').textContent = price;
-            document.querySelector('.buyButton').style.display = 'none';
-            document.getElementById('confirmation').style.display = 'block';
-        }
+</main>
 
-        function copyPix() {
-            navigator.clipboard.writeText("417.710.408-66").then(() => {
-                alert('Chave Pix copiada!');
-            });
-        }
-
-        // Função para voltar para o início ao clicar na logo ou no botão "Home"
-        function goHome() {
-            window.location.href = "#"; // Retorna para o topo da página
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
