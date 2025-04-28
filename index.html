@@ -1,69 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XBOX 360 NEVEX - Loja de Jogos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XBOX 360 NEVEX - Loja de Jogos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <div class="logo" onclick="location.href='index.html'">XBOX 360 NEVEX</div>
-    <nav class="navbar">
-        <a href="index.html">Início</a>
-        <a href="#legos">Legos</a>
-        <a href="#acao">Ação</a>
-        <div class="cart-icon" onclick="location.href='carrinho.html'">🛒</div>
-    </nav>
+  <div class="logo" onclick="window.location.href='index.html'">XBOX 360 NEVEX</div>
+  <nav class="navbar">
+    <a href="index.html">Início</a>
+  </nav>
 </header>
 
 <main class="container">
+  <h1>Jogos de Ação</h1>
+  <div class="product-grid">
+    <div class="product">
+      <img src="images/sniper-elite.jpg" alt="Sniper Elite V2" class="product-image">
+      <h2>Sniper Elite V2</h2>
+      <p class="price">R$ 20,00</p>
+      <a href="pages/sniper-elite.html"><button>Comprar</button></a>
+    </div>
+  </div>
 
-    <section id="legos">
-        <h1>Jogos LEGO</h1>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS">
-                <h2>LEGO Star Wars: TCS</h2>
-                <p class="price">R$ 15,00</p>
-                <button onclick="location.href='pages/lego-tcs.html'">Comprar</button>
-                <button onclick="addToCart('LEGO Star Wars: TCS', 15)">Adicionar à Sacola</button>
-            </div>
-
-            <div class="product">
-                <img src="images/lego-star-wars-ii.jpg" alt="LEGO Star Wars II">
-                <h2>LEGO Star Wars II</h2>
-                <p class="price">R$ 30,00</p>
-                <button onclick="location.href='pages/lego-ii.html'">Comprar</button>
-                <button onclick="addToCart('LEGO Star Wars II', 30)">Adicionar à Sacola</button>
-            </div>
-
-            <div class="product">
-                <img src="images/lego-star-wars-iii.jpg" alt="LEGO Star Wars III">
-                <h2>LEGO Star Wars III</h2>
-                <p class="price">R$ 40,00</p>
-                <button onclick="location.href='pages/lego-iii.html'">Comprar</button>
-                <button onclick="addToCart('LEGO Star Wars III', 40)">Adicionar à Sacola</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="acao">
-        <h1>Jogos de Ação</h1>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/sniper-elite.jpg" alt="Sniper Elite v2">
-                <h2>Sniper Elite v2</h2>
-                <p class="price">R$ 20,00</p>
-                <button onclick="location.href='pages/sniper-elite.html'">Comprar</button>
-                <button onclick="addToCart('Sniper Elite v2', 20)">Adicionar à Sacola</button>
-            </div>
-        </div>
-    </section>
-
+  <h1>Jogos LEGO</h1>
+  <div class="product-grid">
+    <div class="product">
+      <img src="images/lego-tcs.jpg" alt="LEGO Star Wars: TCS" class="product-image">
+      <h2>LEGO Star Wars: TCS</h2>
+      <p class="price">R$ 15,00</p>
+      <a href="pages/lego-tcs.html"><button>Comprar</button></a>
+    </div>
+    <div class="product">
+      <img src="images/lego-ii.jpg" alt="LEGO Star Wars II" class="product-image">
+      <h2>LEGO Star Wars II</h2>
+      <p class="price">R$ 30,00</p>
+      <a href="pages/lego-ii.html"><button>Comprar</button></a>
+    </div>
+    <div class="product">
+      <img src="images/lego-iii.jpg" alt="LEGO Star Wars III" class="product-image">
+      <h2>LEGO Star Wars III</h2>
+      <p class="price">R$ 40,00</p>
+      <a href="pages/lego-iii.html"><button>Comprar</button></a>
+    </div>
+  </div>
 </main>
 
-<script src="script.js"></script>
 </body>
 </html>
