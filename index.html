@@ -1,81 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XBOX 360 NEVEX</title>
+  <title>JOGOS 360 NEVEX</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">XBOX 360<br>NEVEX</div>
-    <nav class="navbar">
-      <a href="#inicio">Início</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <h1>JOGOS 360 NEVEX</h1>
   </header>
 
-  <main class="container" id="inicio">
-    <h1>Catálogo de Jogos</h1>
+  <section class="catalogo">
+    <div class="jogo">
+      <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
+      <h2>LEGO Star Wars II</h2>
+      <p>R$ 5,00</p>
+      <button onclick="comprar('LEGO Star Wars II', '5,00')">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
+      <h2>LEGO Star Wars III</h2>
+      <p>R$ 5,00</p>
+      <button onclick="comprar('LEGO Star Wars III', '5,00')">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" />
+      <h2>LEGO Star Wars: TCS</h2>
+      <p>R$ 5,00</p>
+      <button onclick="comprar('LEGO Star Wars: TCS', '5,00')">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="sniper-elite.jpg" alt="Sniper Elite" />
+      <h2>Sniper Elite</h2>
+      <p>R$ 5,00</p>
+      <button onclick="comprar('Sniper Elite', '5,00')">Comprar</button>
+    </div>
+  </section>
 
-    <section class="catalogo">
-      <h2>LEGO Star Wars</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="imagens/lego-sw2.jpg" alt="LEGO Star Wars II" />
-          <h3>LEGO Star Wars II</h3>
-          <p>R$ 15,00</p>
-          <button onclick="selecionarJogo('LEGO Star Wars II')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="imagens/lego-sw3.jpg" alt="LEGO Star Wars III" />
-          <h3>LEGO Star Wars III</h3>
-          <p>R$ 15,00</p>
-          <button onclick="selecionarJogo('LEGO Star Wars III')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="imagens/lego-tcs.jpg" alt="LEGO Star Wars: The Complete Saga" />
-          <h3>LEGO Star Wars TCS</h3>
-          <p>R$ 15,00</p>
-          <button onclick="selecionarJogo('LEGO Star Wars TCS')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="imagens/sniper-elite.jpg" alt="Sniper Elite V2" />
-          <h3>Sniper Elite V2</h3>
-          <p>R$ 15,00</p>
-          <button onclick="selecionarJogo('Sniper Elite V2')">Comprar</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="compra" id="contato">
-      <h2>Finalizar Compra</h2>
-      <p>Você escolheu: <strong id="jogoEscolhido">Nenhum</strong></p>
-      <p>Valor: <strong id="valorEscolhido">R$ 0,00</strong></p>
-      <p>Essa é uma conta de Xbox 360 com transferência de licença ativa e 100% segura.<br>
-         Após o pagamento, chame no WhatsApp para receber sua conta.</p>
-
-      <button class="copy-button" onclick="copiarPix()">Copiar Pix</button>
-      <a id="linkWhatsApp" class="whatsapp-button" href="#" target="_blank">Chamar no WhatsApp</a>
-    </section>
-  </main>
+  <section id="pagamento">
+    <h2>Finalizar Compra</h2>
+    <p>Chave Pix (CPF): <strong>417.710.408-66</strong></p>
+    <a id="linkZap" class="zap" href="#" target="_blank">Falar no WhatsApp</a>
+  </section>
 
   <footer>
-    © 2025 XBOX 360 NEVEX. Todos os direitos reservados.
+    <p>© 2025 JOGOS 360 NEVEX</p>
   </footer>
 
   <script>
-    function selecionarJogo(jogo) {
-      document.getElementById("jogoEscolhido").innerText = jogo;
-      document.getElementById("valorEscolhido").innerText = "R$ 15,00";
-
-      const mensagem = encodeURIComponent("Olá! Eu gostaria de comprar o jogo: " + jogo);
-      document.getElementById("linkWhatsApp").href = "https://wa.me/5511939053090?text=" + mensagem;
-    }
-
-    function copiarPix() {
-      navigator.clipboard.writeText("417.710.408-66");
-      alert("Chave Pix (CPF) copiada!");
+    function comprar(nome, valor) {
+      const mensagem = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Gostaria de receber a conta do jogo.`;
+      const url = `https://wa.me/55SEUNUMEROAQUI?text=${encodeURIComponent(mensagem)}`;
+      document.getElementById("linkZap").href = url;
+      document.getElementById("linkZap").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 </body>
