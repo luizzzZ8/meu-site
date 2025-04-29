@@ -1,101 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XBOX 360 NEVEX - Loja de Jogos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XBOX 360 NEVEX</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function comprar(jogo, preco) {
+      document.getElementById('compra-info').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('jogo-nome').innerText = jogo;
+      document.getElementById('jogo-preco').innerText = preco;
+    }
+
+    function copiarPix() {
+      const pix = "seu_pix_aqui@pix.com";  // Substituir pelo seu pix
+      navigator.clipboard.writeText(pix);
+      alert("Pix copiado!");
+    }
+  </script>
 </head>
 <body>
+  <header>
+    <div class="logo">XBOX 360<br />NEVEX</div>
+    <nav class="navbar">
+      <a href="#inicio">Início</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo" onclick="goHome()">XBOX 360 NEVEX</div>
-  <nav class="navbar">
-    <a href="#catalogo">Início</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
+  <div class="container" id="inicio">
+    <h1>Catálogo de Jogos</h1>
 
-<main class="container" id="catalogo">
-  <h1>Catálogo de Jogos</h1>
+    <div class="catalogo">
+      <h2>Ação</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="imagens/sniper-elite.jpg" alt="Sniper Elite v2">
+          <h3>Sniper Elite v2</h3>
+          <p>R$ 20,00</p>
+          <button class="buy-button" onclick="comprar('Sniper Elite v2', 'R$ 20,00')">Comprar</button>
+        </div>
+      </div>
 
-  <section class="catalogo">
-    <h2>Ação</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="images/sniper-elite.jpg" alt="Sniper Elite v2">
-        <h3>Sniper Elite v2</h3>
-        <p>R$ 20,00</p>
-        <button class="buy-button" onclick="showPurchase('Sniper Elite v2', 'R$ 20,00')">Comprar</button>
+      <h2>Legos</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="imagens/lego-tcs.jpg" alt="LEGO Star Wars: TCS">
+          <h3>LEGO Star Wars: TCS</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars: TCS', 'R$ 15,00')">Comprar</button>
+        </div>
+
+        <div class="product">
+          <img src="imagens/lego-sw2.jpg" alt="LEGO Star Wars II">
+          <h3>LEGO Star Wars II</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars II', 'R$ 15,00')">Comprar</button>
+        </div>
+
+        <div class="product">
+          <img src="imagens/lego-sw3.jpg" alt="LEGO Star Wars III">
+          <h3>LEGO Star Wars III</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars III', 'R$ 15,00')">Comprar</button>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="catalogo">
-    <h2>Legos</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="images/lego-tcs.jpg" alt="LEGO Star Wars: TCS">
-        <h3>LEGO Star Wars: TCS</h3>
-        <p>R$ 15,00</p>
-        <button class="buy-button" onclick="showPurchase('LEGO Star Wars: TCS', 'R$ 15,00')">Comprar</button>
-      </div>
-
-      <div class="product">
-        <img src="images/lego-sw2.jpg" alt="LEGO Star Wars II">
-        <h3>LEGO Star Wars II</h3>
-        <p>R$ 30,00</p>
-        <button class="buy-button" onclick="showPurchase('LEGO Star Wars II', 'R$ 30,00')">Comprar</button>
-      </div>
-
-      <div class="product">
-        <img src="images/lego-sw3.jpg" alt="LEGO Star Wars III">
-        <h3>LEGO Star Wars III</h3>
-        <p>R$ 40,00</p>
-        <button class="buy-button" onclick="showPurchase('LEGO Star Wars III', 'R$ 40,00')">Comprar</button>
-      </div>
+    <div class="compra-info" id="compra-info">
+      <h2>Finalizar Compra</h2>
+      <p>Você escolheu: <strong id="jogo-nome">Nenhum</strong></p>
+      <p>Valor: <strong id="jogo-preco">R$ 0,00</strong></p>
+      <p>Essa é uma conta de Xbox 360 com transferência de licença ativa e 100% segura.</p>
+      <p>Após o pagamento, chame no WhatsApp para receber sua conta.</p>
+      <button class="copy-button" onclick="copiarPix()">Copiar Pix</button>
+      <a href="https://wa.me/seunumerowhatsapp" target="_blank" class="whatsapp-button">Chamar no WhatsApp</a>
     </div>
-  </section>
-</main>
+  </div>
 
-<!-- Seção de compra -->
-<section id="compra" class="compra" style="display: none;">
-  <h2 id="titulo-jogo"></h2>
-  <p id="preco-jogo"></p>
-  <p>Conta de Xbox 360 - Transferência de licença ativa - 100% segura.</p>
-  <p>Após o pagamento, entre em contato para retirar sua conta pelo WhatsApp!</p>
-  
-  <button onclick="copiarPix()" class="copy-button">Copiar Chave Pix</button>
-  <a id="link-whatsapp" class="whatsapp-button" target="_blank">Falar no WhatsApp</a>
-</section>
-
-<footer id="contato">
-  <p>Chave Pix (CPF): 417.710.408-66</p>
-  <p>WhatsApp: +55 (11) 93905-3090</p>
-</footer>
-
-<script>
-function goHome() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function showPurchase(nomeJogo, preco) {
-  document.getElementById('titulo-jogo').innerText = nomeJogo;
-  document.getElementById('preco-jogo').innerText = preco;
-  document.getElementById('compra').style.display = 'block';
-  document.getElementById('link-whatsapp').href = `https://wa.me/5511939053090?text=Olá, já realizei o pagamento do jogo ${nomeJogo} e gostaria de receber a conta.`;
-  
-  document.getElementById('compra').scrollIntoView({ behavior: 'smooth' });
-}
-
-function copiarPix() {
-  navigator.clipboard.writeText('417.710.408-66').then(() => {
-    alert('Chave Pix copiada!');
-  }, (err) => {
-    alert('Erro ao copiar Pix: ' + err);
-  });
-}
-</script>
-
+  <footer id="contato">
+    <p>&copy; 2025 XBOX 360 NEVEX. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
