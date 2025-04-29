@@ -4,57 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JOGOS 360 NEVEX</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: lime;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      color: black;
+    }
+    nav a {
+      margin-left: 15px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .catalogo {
+      padding: 20px;
+    }
+    .jogo {
+      margin-bottom: 40px;
+    }
+    .jogo img {
+      width: 200px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .preco {
+      color: lime;
+      font-weight: bold;
+    }
+    button {
+      background-color: lime;
+      color: black;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 10px;
+      color: gray;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">JOGOS 360 NEVEX</div>
-  </header>
 
-  <section class="catalogo">
-    <div class="jogo">
-      <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
-      <h2>LEGO Star Wars II</h2>
-      <p>R$ 30,00</p>
-      <button onclick="comprar('LEGO Star Wars II', '30,00')">Comprar</button>
-    </div>
-    <div class="jogo">
-      <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
-      <h2>LEGO Star Wars III</h2>
-      <p>R$ 40,00</p>
-      <button onclick="comprar('LEGO Star Wars III', '40,00')">Comprar</button>
-    </div>
-    <div class="jogo">
-      <img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" />
-      <h2>LEGO Star Wars: TCS</h2>
-      <p>R$ 15,00</p>
-      <button onclick="comprar('LEGO Star Wars: TCS', '15,00')">Comprar</button>
-    </div>
-    <div class="jogo">
-      <img src="sniper-elite.jpg" alt="Sniper Elite v2" />
-      <h2>Sniper Elite v2</h2>
-      <p>R$ 20,00</p>
-      <button onclick="comprar('Sniper Elite v2', '20,00')">Comprar</button>
-    </div>
-  </section>
+<header>
+  <h1>JOGOS 360 NEVEX</h1>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <section id="pagamento">
-    <h2>Finalizar Compra</h2>
-    <p>Chave Pix (CPF): <strong>417.710.408-66</strong></p>
-    <a id="linkZap" class="zap" href="#" target="_blank">Falar no WhatsApp</a>
-  </section>
+<div id="inicio" class="catalogo">
 
-  <footer>
-    <p>© 2025 JOGOS 360 NEVEX</p>
-  </footer>
+  <div class="jogo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Lego_Star_Wars_II.jpg" alt="LEGO Star Wars II">
+    <div>LEGO Star Wars II</div>
+    <div class="preco">R$ 30,00</div>
+    <button onclick="rolarParaCompra('LEGO Star Wars II', '30,00')">Comprar</button>
+  </div>
 
-  <script>
-    function comprar(nome, valor) {
-      const mensagem = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Gostaria de receber a conta do jogo.`;
-      const url = `https://wa.me/5511939053090?text=${encodeURIComponent(mensagem)}`;
-      document.getElementById("linkZap").href = url;
-      document.getElementById("linkZap").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
+  <div class="jogo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Lego_star_wars_iii_the_clone_wars_cover.jpg" alt="LEGO Star Wars III">
+    <div>LEGO Star Wars III</div>
+    <div class="preco">R$ 40,00</div>
+    <button onclick="rolarParaCompra('LEGO Star Wars III', '40,00')">Comprar</button>
+  </div>
+
+  <div class="jogo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Lego_star_wars_the_complete_saga.jpg" alt="LEGO Star Wars TCS">
+    <div>LEGO Star Wars: TCS</div>
+    <div class="preco">R$ 15,00</div>
+    <button onclick="rolarParaCompra('LEGO Star Wars TCS', '15,00')">Comprar</button>
+  </div>
+
+  <div class="jogo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Sniper_Elite_V2.jpg" alt="Sniper Elite v2">
+    <div>Sniper Elite v2</div>
+    <div class="preco">R$ 20,00</div>
+    <button onclick="rolarParaCompra('Sniper Elite v2', '20,00')">Comprar</button>
+  </div>
+
+</div>
+
+<div id="contato" style="padding: 20px; border-top: 2px solid lime;">
+  <h2>Finalizar Compra</h2>
+  <p><strong>Chave Pix (CPF):</strong> 417.710.408-66</p>
+  <p>
+    <a id="link-whatsapp" href="https://wa.me/5511939053090" target="_blank" style="color: lime;">
+      Fale no WhatsApp
+    </a>
+  </p>
+</div>
+
+<footer>
+  &copy; 2025 JOGOS 360 NEVEX
+</footer>
+
+<script>
+  function rolarParaCompra(nome, valor) {
+    document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+    const link = document.getElementById('link-whatsapp');
+    const msg = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Pode me enviar a conta do jogo?`;
+    const url = `https://wa.me/5511939053090?text=${encodeURIComponent(msg)}`;
+    link.href = url;
+  }
+</script>
+
 </body>
 </html>
