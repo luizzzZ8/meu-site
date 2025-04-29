@@ -97,6 +97,7 @@ h1 {
   text-decoration: none;
   border-radius: 10px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .buy-button:hover {
@@ -108,4 +109,28 @@ footer {
   padding: 20px;
   background: #111;
   text-align: center;
+}
+
+/* Compra */
+.compra {
+  margin: 50px 20px;
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.copy-button, .whatsapp-button {
+  display: inline-block;
+  margin: 10px 10px 0 10px;
+  padding: 12px 20px;
+  background-color: #0f0;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.copy-button:hover, .whatsapp-button:hover {
+  background-color: #00cc00;
 }

@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
   <div class="logo" onclick="goHome()">XBOX 360 NEVEX</div>
   <nav class="navbar">
-    <a href="index.html">Início</a>
+    <a href="#catalogo">Início</a>
     <a href="#contato">Contato</a>
   </nav>
 </header>
 
-<main class="container">
+<main class="container" id="catalogo">
   <h1>Catálogo de Jogos</h1>
 
   <section class="catalogo">
@@ -25,7 +26,7 @@
         <img src="images/sniper-elite.jpg" alt="Sniper Elite v2">
         <h3>Sniper Elite v2</h3>
         <p>R$ 20,00</p>
-        <a href="pages/sniper-elite.html" class="buy-button">Comprar</a>
+        <button class="buy-button" onclick="showPurchase('Sniper Elite v2', 'R$ 20,00')">Comprar</button>
       </div>
     </div>
   </section>
@@ -37,26 +38,36 @@
         <img src="images/lego-tcs.jpg" alt="LEGO Star Wars: TCS">
         <h3>LEGO Star Wars: TCS</h3>
         <p>R$ 15,00</p>
-        <a href="pages/lego-tcs.html" class="buy-button">Comprar</a>
+        <button class="buy-button" onclick="showPurchase('LEGO Star Wars: TCS', 'R$ 15,00')">Comprar</button>
       </div>
 
       <div class="product">
         <img src="images/lego-sw2.jpg" alt="LEGO Star Wars II">
         <h3>LEGO Star Wars II</h3>
         <p>R$ 30,00</p>
-        <a href="pages/lego-sw2.html" class="buy-button">Comprar</a>
+        <button class="buy-button" onclick="showPurchase('LEGO Star Wars II', 'R$ 30,00')">Comprar</button>
       </div>
 
       <div class="product">
         <img src="images/lego-sw3.jpg" alt="LEGO Star Wars III">
         <h3>LEGO Star Wars III</h3>
         <p>R$ 40,00</p>
-        <a href="pages/lego-sw3.html" class="buy-button">Comprar</a>
+        <button class="buy-button" onclick="showPurchase('LEGO Star Wars III', 'R$ 40,00')">Comprar</button>
       </div>
     </div>
   </section>
-
 </main>
+
+<!-- Seção de compra -->
+<section id="compra" class="compra" style="display: none;">
+  <h2 id="titulo-jogo"></h2>
+  <p id="preco-jogo"></p>
+  <p>Conta de Xbox 360 - Transferência de licença ativa - 100% segura.</p>
+  <p>Após o pagamento, entre em contato para retirar sua conta pelo WhatsApp!</p>
+  
+  <button onclick="copiarPix()" class="copy-button">Copiar Chave Pix</button>
+  <a id="link-whatsapp" class="whatsapp-button" target="_blank">Falar no WhatsApp</a>
+</section>
 
 <footer id="contato">
   <p>Chave Pix (CPF): 417.710.408-66</p>
@@ -64,9 +75,27 @@
 </footer>
 
 <script>
-  function goHome() {
-    window.location.href = "index.html";
-  }
+function goHome() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showPurchase(nomeJogo, preco) {
+  document.getElementById('titulo-jogo').innerText = nomeJogo;
+  document.getElementById('preco-jogo').innerText = preco;
+  document.getElementById('compra').style.display = 'block';
+  document.getElementById('link-whatsapp').href = `https://wa.me/5511939053090?text=Olá, já realizei o pagamento do jogo ${nomeJogo} e gostaria de receber a conta.`;
+  
+  document.getElementById('compra').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copiarPix() {
+  navigator.clipboard.writeText('417.710.408-66').then(() => {
+    alert('Chave Pix copiada!');
+  }, (err) => {
+    alert('Erro ao copiar Pix: ' + err);
+  });
+}
 </script>
+
 </body>
 </html>
