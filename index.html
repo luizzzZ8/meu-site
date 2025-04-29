@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,33 +8,33 @@
 </head>
 <body>
   <header>
-    <h1>JOGOS 360 NEVEX</h1>
+    <div class="logo">JOGOS 360 NEVEX</div>
   </header>
 
   <section class="catalogo">
     <div class="jogo">
       <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
       <h2>LEGO Star Wars II</h2>
-      <p>R$ 5,00</p>
-      <button onclick="comprar('LEGO Star Wars II', '5,00')">Comprar</button>
+      <p>R$ 30,00</p>
+      <button onclick="comprar('LEGO Star Wars II', '30,00')">Comprar</button>
     </div>
     <div class="jogo">
       <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
       <h2>LEGO Star Wars III</h2>
-      <p>R$ 5,00</p>
-      <button onclick="comprar('LEGO Star Wars III', '5,00')">Comprar</button>
+      <p>R$ 40,00</p>
+      <button onclick="comprar('LEGO Star Wars III', '40,00')">Comprar</button>
     </div>
     <div class="jogo">
       <img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" />
       <h2>LEGO Star Wars: TCS</h2>
-      <p>R$ 5,00</p>
-      <button onclick="comprar('LEGO Star Wars: TCS', '5,00')">Comprar</button>
+      <p>R$ 15,00</p>
+      <button onclick="comprar('LEGO Star Wars: TCS', '15,00')">Comprar</button>
     </div>
     <div class="jogo">
-      <img src="sniper-elite.jpg" alt="Sniper Elite" />
-      <h2>Sniper Elite</h2>
-      <p>R$ 5,00</p>
-      <button onclick="comprar('Sniper Elite', '5,00')">Comprar</button>
+      <img src="sniper-elite.jpg" alt="Sniper Elite v2" />
+      <h2>Sniper Elite v2</h2>
+      <p>R$ 20,00</p>
+      <button onclick="comprar('Sniper Elite v2', '20,00')">Comprar</button>
     </div>
   </section>
 
@@ -52,7 +51,7 @@
   <script>
     function comprar(nome, valor) {
       const mensagem = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Gostaria de receber a conta do jogo.`;
-      const url = `https://wa.me/55SEUNUMEROAQUI?text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/5511939053090?text=${encodeURIComponent(mensagem)}`;
       document.getElementById("linkZap").href = url;
       document.getElementById("linkZap").scrollIntoView({ behavior: "smooth" });
     }
