@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XBOX 360 NEVEX</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function comprar(jogo, preco) {
+      document.getElementById('compra-info').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('jogo-nome').innerText = jogo;
+      document.getElementById('jogo-preco').innerText = preco;
+    }
+
+    function copiarPix() {
+      const pix = "seu_pix_aqui@pix.com";  // Substituir pelo seu pix
+      navigator.clipboard.writeText(pix);
+      alert("Pix copiado!");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">XBOX 360<br />NEVEX</div>
+    <nav class="navbar">
+      <a href="#inicio">Início</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container" id="inicio">
+    <h1>Catálogo de Jogos</h1>
+
+    <div class="catalogo">
+      <h2>Ação</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="imagens/sniper-elite.jpg" alt="Sniper Elite v2">
+          <h3>Sniper Elite v2</h3>
+          <p>R$ 20,00</p>
+          <button class="buy-button" onclick="comprar('Sniper Elite v2', 'R$ 20,00')">Comprar</button>
+        </div>
+      </div>
+
+      <h2>Legos</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="imagens/lego-tcs.jpg" alt="LEGO Star Wars: TCS">
+          <h3>LEGO Star Wars: TCS</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars: TCS', 'R$ 15,00')">Comprar</button>
+        </div>
+
+        <div class="product">
+          <img src="imagens/lego-sw2.jpg" alt="LEGO Star Wars II">
+          <h3>LEGO Star Wars II</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars II', 'R$ 15,00')">Comprar</button>
+        </div>
+
+        <div class="product">
+          <img src="imagens/lego-sw3.jpg" alt="LEGO Star Wars III">
+          <h3>LEGO Star Wars III</h3>
+          <p>R$ 15,00</p>
+          <button class="buy-button" onclick="comprar('LEGO Star Wars III', 'R$ 15,00')">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="compra-info" id="compra-info">
+      <h2>Finalizar Compra</h2>
+      <p>Você escolheu: <strong id="jogo-nome">Nenhum</strong></p>
+      <p>Valor: <strong id="jogo-preco">R$ 0,00</strong></p>
+      <p>Essa é uma conta de Xbox 360 com transferência de licença ativa e 100% segura.</p>
+      <p>Após o pagamento, chame no WhatsApp para receber sua conta.</p>
+      <button class="copy-button" onclick="copiarPix()">Copiar Pix</button>
+      <a href="https://wa.me/seunumerowhatsapp" target="_blank" class="whatsapp-button">Chamar no WhatsApp</a>
+    </div>
+  </div>
+
+  <footer id="contato">
+    <p>&copy; 2025 XBOX 360 NEVEX. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
