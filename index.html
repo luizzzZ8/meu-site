@@ -9,63 +9,50 @@
 
 <header>
   <h1 class="logo">Jogos 360 Nevex</h1>
-  <nav>
-    <button class="nav-btn" onclick="location.href='#inicio'">Início</button>
-    <button class="nav-btn" onclick="location.href='#contato'">Contato</button>
-  </nav>
 </header>
 
-<section id="filtros">
-  <button class="filter-btn" onclick="filtrar('todos')">Todos</button>
-  <button class="filter-btn" onclick="filtrar('lego')">LEGO</button>
-  <button class="filter-btn" onclick="filtrar('acao')">Ação / Tiro</button>
-</section>
-
 <section id="catalogo">
-  <div class="catalogo-linha">
-    <div class="produto lego">
-      <img src="lego-star-wars-ii.jpg" alt="LEGO Star Wars II">
-      <p>LEGO Star Wars II — R$ 25</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto lego">
-      <img src="lego-star-wars-iii.jpg" alt="LEGO Star Wars III">
-      <p>LEGO Star Wars III — R$ 30</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto lego">
-      <img src="lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS">
-      <p>LEGO Star Wars: TCS — R$ 15</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto lego">
-      <img src="lego-indiana-jones-1.jpg" alt="LEGO Indiana Jones 1">
-      <p>LEGO Indiana Jones: As Aventuras Originais — R$ 20</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto lego">
-      <img src="lego-indiana-jones-2.jpg" alt="LEGO Indiana Jones 2">
-      <p>LEGO® Indiana Jones™ 2 — R$ 20</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto lego">
-      <img src="lego-piratas-caribe.jpg" alt="LEGO Piratas do Caribe">
-      <p>LEGO Piratas do Caribe: O Videogame — R$ 20</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
-    <div class="produto acao">
-      <img src="sniper-elite.jpg" alt="Sniper Elite">
-      <p>Sniper Elite — R$ 20</p>
-      <button class="buy-btn">Comprar</button>
-    </div>
+  <div class="produto lego">
+    <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones 1">
+    <p>LEGO Indiana Jones 1 — R$ 20</p>
+    <button class="buy-btn" onclick="comprar('LEGO Indiana Jones 1', '20')">Comprar</button>
+  </div>
+  <div class="produto lego">
+    <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
+    <p>LEGO Indiana Jones 2 — R$ 20</p>
+    <button class="buy-btn" onclick="comprar('LEGO Indiana Jones 2', '20')">Comprar</button>
+  </div>
+  <div class="produto lego">
+    <img src="lego-pirates.jpg" alt="LEGO Piratas do Caribe">
+    <p>LEGO Piratas do Caribe — R$ 20</p>
+    <button class="buy-btn" onclick="comprar('LEGO Piratas do Caribe', '20')">Comprar</button>
+  </div>
+  <div class="produto lego">
+    <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
+    <p>LEGO Star Wars II — R$ 25</p>
+    <button class="buy-btn" onclick="comprar('LEGO Star Wars II', '25')">Comprar</button>
+  </div>
+  <div class="produto lego">
+    <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
+    <p>LEGO Star Wars III — R$ 30</p>
+    <button class="buy-btn" onclick="comprar('LEGO Star Wars III', '30')">Comprar</button>
+  </div>
+  <div class="produto lego">
+    <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
+    <p>LEGO Star Wars TCS — R$ 15</p>
+    <button class="buy-btn" onclick="comprar('LEGO Star Wars TCS', '15')">Comprar</button>
+  </div>
+  <div class="produto acao">
+    <img src="sniper-elite.jpg" alt="Sniper Elite">
+    <p>Sniper Elite — R$ 20</p>
+    <button class="buy-btn" onclick="comprar('Sniper Elite', '20')">Comprar</button>
   </div>
 </section>
 
 <section id="pagamento">
   <h3>Finalizar Compra</h3>
-  <p>Após o pagamento, envie o comprovante pelo WhatsApp para pegar sua conta.</p>
-  <button class="pix-btn" onclick="navigator.clipboard.writeText('417.710.408-66')">Copiar Pix</button>
-  <button class="zap-btn" onclick="window.open('https://wa.me/5511939053090', '_blank')">Ir para WhatsApp</button>
+  <p>Após o pagamento, envie o comprovante no WhatsApp para pegar sua conta.</p>
+  <button class="pix-btn" onclick="navigator.clipboard.writeText('417.710.408-66')">Copiar Pix (CPF: 417.710.408-66)</button>
 </section>
 
 <script src="script.js"></script>
