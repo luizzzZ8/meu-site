@@ -1,60 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Jogos 360 Nevex</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Jogos 360 Nevex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Jogos 360 Nevex</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+        </nav>
+    </header>
 
-<header>
-  <h1 class="logo">Jogos 360 Nevex</h1>
-</header>
+    <section id="inicio" class="catalogo">
+        <div class="jogo">
+            <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones 1">
+            <h2>LEGO Indiana Jones 1 — R$ 20</h2>
+            <button onclick="finalizarCompra('LEGO Indiana Jones 1', 'R$ 20')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
+            <h2>LEGO Indiana Jones 2 — R$ 20</h2>
+            <button onclick="finalizarCompra('LEGO Indiana Jones 2', 'R$ 20')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="lego-pirates.jpg" alt="LEGO Piratas do Caraíbas">
+            <h2>LEGO Piratas do Caraíbas — R$ 20</h2>
+            <button onclick="finalizarCompra('LEGO Piratas do Caraíbas', 'R$ 20')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
+            <h2>LEGO Star Wars II — R$ 25</h2>
+            <button onclick="finalizarCompra('LEGO Star Wars II', 'R$ 25')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
+            <h2>LEGO Star Wars III — R$ 30</h2>
+            <button onclick="finalizarCompra('LEGO Star Wars III', 'R$ 30')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
+            <h2>LEGO Star Wars TCS — R$ 15</h2>
+            <button onclick="finalizarCompra('LEGO Star Wars TCS', 'R$ 15')">Comprar</button>
+        </div>
+        <div class="jogo">
+            <img src="sniper-elite.jpg" alt="Sniper Elite">
+            <h2>Sniper Elite — R$ 20</h2>
+            <button onclick="finalizarCompra('Sniper Elite', 'R$ 20')">Comprar</button>
+        </div>
+    </section>
 
-<section id="catalogo">
-  <div class="produto lego">
-    <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones 1">
-    <p>LEGO Indiana Jones 1 — R$ 20</p>
-    <button class="buy-btn" onclick="comprar('LEGO Indiana Jones 1', '20')">Comprar</button>
-  </div>
-  <div class="produto lego">
-    <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
-    <p>LEGO Indiana Jones 2 — R$ 20</p>
-    <button class="buy-btn" onclick="comprar('LEGO Indiana Jones 2', '20')">Comprar</button>
-  </div>
-  <div class="produto lego">
-    <img src="lego-pirates.jpg" alt="LEGO Piratas do Caribe">
-    <p>LEGO Piratas do Caribe — R$ 20</p>
-    <button class="buy-btn" onclick="comprar('LEGO Piratas do Caribe', '20')">Comprar</button>
-  </div>
-  <div class="produto lego">
-    <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
-    <p>LEGO Star Wars II — R$ 25</p>
-    <button class="buy-btn" onclick="comprar('LEGO Star Wars II', '25')">Comprar</button>
-  </div>
-  <div class="produto lego">
-    <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
-    <p>LEGO Star Wars III — R$ 30</p>
-    <button class="buy-btn" onclick="comprar('LEGO Star Wars III', '30')">Comprar</button>
-  </div>
-  <div class="produto lego">
-    <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
-    <p>LEGO Star Wars TCS — R$ 15</p>
-    <button class="buy-btn" onclick="comprar('LEGO Star Wars TCS', '15')">Comprar</button>
-  </div>
-  <div class="produto acao">
-    <img src="sniper-elite.jpg" alt="Sniper Elite">
-    <p>Sniper Elite — R$ 20</p>
-    <button class="buy-btn" onclick="comprar('Sniper Elite', '20')">Comprar</button>
-  </div>
-</section>
+    <section id="finalizar">
+        <h2>Finalizar Compra</h2>
+        <div id="detalhes"></div>
+        <a id="whatsapp-button" href="#" target="_blank">Ir para o WhatsApp</a>
+    </section>
 
-<section id="pagamento">
-  <h3>Finalizar Compra</h3>
-  <p>Após o pagamento, envie o comprovante no WhatsApp para pegar sua conta.</p>
-  <button class="pix-btn" onclick="navigator.clipboard.writeText('417.710.408-66')">Copiar Pix (CPF: 417.710.408-66)</button>
-</section>
-
-<script src="script.js"></script>
+    <script>
+        function finalizarCompra(nome, preco) {
+            document.getElementById('detalhes').innerHTML = `
+                <p>Você selecionou: <strong>${nome}</strong></p>
+                <p>Preço: <strong>${preco}</strong></p>
+                <p>Após o pagamento, clique no botão abaixo para solicitar a conta no WhatsApp.</p>
+            `;
+            const msg = encodeURIComponent(`Olá! Já fiz o pagamento do ${nome} no valor de ${preco}. Gostaria de receber a conta, por favor.`);
+            document.getElementById('whatsapp-button').href = `https://wa.me/5599999999999?text=${msg}`;
+            document.getElementById('finalizar').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
