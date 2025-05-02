@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JOGOS 360 NEVEX</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Jogos 360 Nevex</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>JOGOS 360 NEVEX</h1>
-    <nav>
-      <a href="#catalogo">Início</a>
-      <a href="#pagamento">Contato</a>
-    </nav>
-  </header>
 
-  <section id="catalogo">
-    <h2>Catálogo LEGO</h2>
-    <div class="catalogo">
-      <div class="jogo"><img src="lego-sw2.jpg" alt="LEGO Star Wars II" /><h3>LEGO Star Wars II</h3><p>R$ 25,00</p><button onclick="comprar('LEGO Star Wars II', '25,00')">Comprar</button></div>
-      <div class="jogo"><img src="lego-sw3.jpg" alt="LEGO Star Wars III" /><h3>LEGO Star Wars III</h3><p>R$ 30,00</p><button onclick="comprar('LEGO Star Wars III', '30,00')">Comprar</button></div>
-      <div class="jogo"><img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" /><h3>LEGO Star Wars: TCS</h3><p>R$ 15,00</p><button onclick="comprar('LEGO Star Wars: TCS', '15,00')">Comprar</button></div>
-      <div class="jogo"><img src="lego-indiana1.jpg" alt="LEGO Indiana Jones: As Aventuras Originais" /><h3>LEGO Indiana Jones: As Aventuras Originais</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Indiana Jones: As Aventuras Originais', '20,00')">Comprar</button></div>
-      <div class="jogo"><img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2" /><h3>LEGO Indiana Jones 2</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Indiana Jones 2', '20,00')">Comprar</button></div>
-      <div class="jogo"><img src="lego-pirates.jpg" alt="LEGO Piratas do Caribe" /><h3>LEGO Piratas do Caribe</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Piratas do Caribe', '20,00')">Comprar</button></div>
+<header>
+  <h1 class="logo">Jogos 360 Nevex</h1>
+  <nav>
+    <button class="nav-btn" onclick="location.href='#inicio'">Início</button>
+    <button class="nav-btn" onclick="location.href='#contato'">Contato</button>
+  </nav>
+</header>
+
+<section id="filtros">
+  <button class="filter-btn" onclick="filtrar('todos')">Todos</button>
+  <button class="filter-btn" onclick="filtrar('lego')">LEGO</button>
+  <button class="filter-btn" onclick="filtrar('acao')">Ação / Tiro</button>
+</section>
+
+<section id="catalogo">
+  <div class="catalogo-linha">
+    <div class="produto lego">
+      <img src="lego-star-wars-ii.jpg" alt="LEGO Star Wars II">
+      <p>LEGO Star Wars II — R$ 25</p>
+      <button class="buy-btn">Comprar</button>
     </div>
-
-    <h2>Catálogo AÇÃO / TIRO</h2>
-    <div class="catalogo">
-      <div class="jogo"><img src="sniper-elite.jpg" alt="Sniper Elite" /><h3>Sniper Elite</h3><p>R$ 20,00</p><button onclick="comprar('Sniper Elite', '20,00')">Comprar</button></div>
+    <div class="produto lego">
+      <img src="lego-star-wars-iii.jpg" alt="LEGO Star Wars III">
+      <p>LEGO Star Wars III — R$ 30</p>
+      <button class="buy-btn">Comprar</button>
     </div>
-  </section>
+    <div class="produto lego">
+      <img src="lego-star-wars-tcs.jpg" alt="LEGO Star Wars: TCS">
+      <p>LEGO Star Wars: TCS — R$ 15</p>
+      <button class="buy-btn">Comprar</button>
+    </div>
+    <div class="produto lego">
+      <img src="lego-indiana-jones-1.jpg" alt="LEGO Indiana Jones 1">
+      <p>LEGO Indiana Jones: As Aventuras Originais — R$ 20</p>
+      <button class="buy-btn">Comprar</button>
+    </div>
+    <div class="produto lego">
+      <img src="lego-indiana-jones-2.jpg" alt="LEGO Indiana Jones 2">
+      <p>LEGO® Indiana Jones™ 2 — R$ 20</p>
+      <button class="buy-btn">Comprar</button>
+    </div>
+    <div class="produto lego">
+      <img src="lego-piratas-caribe.jpg" alt="LEGO Piratas do Caribe">
+      <p>LEGO Piratas do Caribe: O Videogame — R$ 20</p>
+      <button class="buy-btn">Comprar</button>
+    </div>
+    <div class="produto acao">
+      <img src="sniper-elite.jpg" alt="Sniper Elite">
+      <p>Sniper Elite — R$ 20</p>
+      <button class="buy-btn">Comprar</button>
+    </div>
+  </div>
+</section>
 
-  <section id="pagamento">
-    <h2>Finalizar Compra</h2>
-    <p>Chave Pix (CPF): <strong id="pix">417.710.408-66</strong></p>
-    <button onclick="copiarPix()">Copiar Pix</button>
-    <a id="linkZap" class="zap" href="#" target="_blank">Falar no WhatsApp</a>
-    <div id="infoCompra"></div>
-  </section>
+<section id="pagamento">
+  <h3>Finalizar Compra</h3>
+  <p>Após o pagamento, envie o comprovante pelo WhatsApp para pegar sua conta.</p>
+  <button class="pix-btn" onclick="navigator.clipboard.writeText('417.710.408-66')">Copiar Pix</button>
+  <button class="zap-btn" onclick="window.open('https://wa.me/5511939053090', '_blank')">Ir para WhatsApp</button>
+</section>
 
-  <footer>
-    <p>© 2025 JOGOS 360 NEVEX</p>
-  </footer>
-
-  <script>
-    function comprar(nome, valor) {
-      const mensagem = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Gostaria de receber a conta do jogo.`;
-      const url = `https://wa.me/5511939053090?text=${encodeURIComponent(mensagem)}`;
-      document.getElementById("linkZap").href = url;
-      document.getElementById("infoCompra").innerText = `Produto: ${nome} | Preço: R$ ${valor}. Após o pagamento, clique no WhatsApp para receber sua conta.`;
-      document.getElementById("linkZap").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function copiarPix() {
-      const pix = document.getElementById("pix").innerText;
-      navigator.clipboard.writeText(pix);
-      alert("Pix copiado: " + pix);
-    }
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
