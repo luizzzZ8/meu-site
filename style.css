@@ -15,105 +15,81 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-}
-
-.navbar {
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
+header nav a {
   color: #000;
   text-decoration: none;
-  font-size: 18px;
+  margin-left: 20px;
   font-weight: bold;
-  padding: 8px 15px;
 }
 
-.navbar a:hover {
-  background-color: #00cc00;
-  border-radius: 5px;
+header nav a:hover {
+  text-decoration: underline;
 }
 
-.container {
-  padding: 120px 20px 20px 20px;
+section {
+  padding: 80px 20px 20px;
 }
 
-h2 {
+h1, h2 {
   text-align: center;
-  color: #0f0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.product-grid {
+.catalogo {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
-.product {
-  background-color: #222;
-  padding: 20px;
+.jogo {
+  background: #111;
+  padding: 15px;
   border-radius: 10px;
+  width: 200px;
   text-align: center;
-  width: 250px;
-  transition: transform 0.2s;
 }
 
-.product:hover {
-  transform: scale(1.05);
-}
-
-.product img {
+.jogo img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
-  margin-bottom: 15px;
 }
 
-button, .whatsapp-button, .copy-button {
+button, .zap {
   background-color: #0f0;
   color: #000;
   padding: 10px 20px;
-  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
   text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px #0a0;
-  transition: all 0.2s;
+  font-weight: bold;
 }
 
-button:hover, .whatsapp-button:hover, .copy-button:hover {
+button:hover, .zap:hover {
   background-color: #00cc00;
-  transform: scale(1.05);
 }
 
-footer {
-  margin-top: 50px;
-  padding: 20px;
+#infoCompra {
+  margin-top: 15px;
   background: #111;
+  padding: 10px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.compra {
-  margin: 50px 20px;
+footer {
+  margin-top: 30px;
+  padding: 20px;
   background: #111;
-  padding: 30px;
-  border-radius: 10px;
   text-align: center;
 }

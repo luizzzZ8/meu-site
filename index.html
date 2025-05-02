@@ -8,51 +8,37 @@
 </head>
 <body>
   <header>
-    <h1 class="logo">JOGOS 360 NEVEX</h1>
-    <nav class="navbar">
-      <a href="#inicio">Início</a>
+    <h1>JOGOS 360 NEVEX</h1>
+    <nav>
+      <a href="#catalogo">Início</a>
       <a href="#pagamento">Contato</a>
     </nav>
   </header>
 
-  <main id="inicio" class="container">
-    <section class="catalogo">
-      <h2>Catálogo de Jogos</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
-          <h3>LEGO Star Wars II</h3>
-          <p>R$ 5,00</p>
-          <button onclick="comprar('LEGO Star Wars II', '5,00')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
-          <h3>LEGO Star Wars III</h3>
-          <p>R$ 7,00</p>
-          <button onclick="comprar('LEGO Star Wars III', '7,00')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" />
-          <h3>LEGO Star Wars: TCS</h3>
-          <p>R$ 6,00</p>
-          <button onclick="comprar('LEGO Star Wars: TCS', '6,00')">Comprar</button>
-        </div>
-        <div class="product">
-          <img src="sniper-elite.jpg" alt="Sniper Elite" />
-          <h3>Sniper Elite V2</h3>
-          <p>R$ 10,00</p>
-          <button onclick="comprar('Sniper Elite V2', '10,00')">Comprar</button>
-        </div>
-      </div>
-    </section>
+  <section id="catalogo">
+    <h2>Catálogo LEGO</h2>
+    <div class="catalogo">
+      <div class="jogo"><img src="lego-sw2.jpg" alt="LEGO Star Wars II" /><h3>LEGO Star Wars II</h3><p>R$ 25,00</p><button onclick="comprar('LEGO Star Wars II', '25,00')">Comprar</button></div>
+      <div class="jogo"><img src="lego-sw3.jpg" alt="LEGO Star Wars III" /><h3>LEGO Star Wars III</h3><p>R$ 30,00</p><button onclick="comprar('LEGO Star Wars III', '30,00')">Comprar</button></div>
+      <div class="jogo"><img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS" /><h3>LEGO Star Wars: TCS</h3><p>R$ 15,00</p><button onclick="comprar('LEGO Star Wars: TCS', '15,00')">Comprar</button></div>
+      <div class="jogo"><img src="lego-indiana1.jpg" alt="LEGO Indiana Jones: As Aventuras Originais" /><h3>LEGO Indiana Jones: As Aventuras Originais</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Indiana Jones: As Aventuras Originais', '20,00')">Comprar</button></div>
+      <div class="jogo"><img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2" /><h3>LEGO Indiana Jones 2</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Indiana Jones 2', '20,00')">Comprar</button></div>
+      <div class="jogo"><img src="lego-pirates.jpg" alt="LEGO Piratas do Caribe" /><h3>LEGO Piratas do Caribe</h3><p>R$ 20,00</p><button onclick="comprar('LEGO Piratas do Caribe', '20,00')">Comprar</button></div>
+    </div>
 
-    <section id="pagamento" class="compra">
-      <h2>Finalizar Compra</h2>
-      <p>Chave Pix (CPF): <strong id="pixChave">417.710.408-66</strong></p>
-      <button class="copy-button" onclick="copiarPix()">Copiar Pix</button>
-      <a id="linkZap" class="whatsapp-button" href="#" target="_blank">Falar no WhatsApp</a>
-    </section>
-  </main>
+    <h2>Catálogo AÇÃO / TIRO</h2>
+    <div class="catalogo">
+      <div class="jogo"><img src="sniper-elite.jpg" alt="Sniper Elite" /><h3>Sniper Elite</h3><p>R$ 20,00</p><button onclick="comprar('Sniper Elite', '20,00')">Comprar</button></div>
+    </div>
+  </section>
+
+  <section id="pagamento">
+    <h2>Finalizar Compra</h2>
+    <p>Chave Pix (CPF): <strong id="pix">417.710.408-66</strong></p>
+    <button onclick="copiarPix()">Copiar Pix</button>
+    <a id="linkZap" class="zap" href="#" target="_blank">Falar no WhatsApp</a>
+    <div id="infoCompra"></div>
+  </section>
 
   <footer>
     <p>© 2025 JOGOS 360 NEVEX</p>
@@ -63,14 +49,14 @@
       const mensagem = `Olá! Já fiz o pagamento do jogo "${nome}" no valor de R$ ${valor}. Gostaria de receber a conta do jogo.`;
       const url = `https://wa.me/5511939053090?text=${encodeURIComponent(mensagem)}`;
       document.getElementById("linkZap").href = url;
+      document.getElementById("infoCompra").innerText = `Produto: ${nome} | Preço: R$ ${valor}. Após o pagamento, clique no WhatsApp para receber sua conta.`;
       document.getElementById("linkZap").scrollIntoView({ behavior: "smooth" });
     }
 
     function copiarPix() {
-      const pix = document.getElementById("pixChave").textContent;
-      navigator.clipboard.writeText(pix).then(() => {
-        alert("Chave Pix copiada!");
-      });
+      const pix = document.getElementById("pix").innerText;
+      navigator.clipboard.writeText(pix);
+      alert("Pix copiado: " + pix);
     }
   </script>
 </body>
