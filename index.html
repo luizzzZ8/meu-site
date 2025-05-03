@@ -1,96 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Jogos 360 Nevex</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogos 360 Nevex</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: red;
+      font-size: 32px;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .jogo {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .jogo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .jogo button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .jogo button:hover {
+      background-color: #218838;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      text-align: center;
+    }
+    footer button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer button:hover {
+      background-color: darkred;
+    }
+    .whatsapp-button {
+      background-color: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe57;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Jogos 360 Nevex</h1>
-    </header>
+<body id="inicio">
+  <h1>Jogos 360 Nevex</h1>
+  <div class="catalogo">
+    <div class="jogo">
+      <img src="lego_indiana1.jpg" alt="LEGO Indiana Jones 1">
+      <h3>LEGO Indiana Jones 1<br>R$ 20</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego_indiana2.jpg" alt="LEGO Indiana Jones 2">
+      <h3>LEGO Indiana Jones 2<br>R$ 20</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego_piratas.jpg" alt="LEGO Piratas do Caribe">
+      <h3>LEGO Piratas do Caribe<br>R$ 20</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego_sw2.jpg" alt="LEGO Star Wars II">
+      <h3>LEGO Star Wars II<br>R$ 25</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego_sw3.jpg" alt="LEGO Star Wars III">
+      <h3>LEGO Star Wars III<br>R$ 30</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="lego_tcs.jpg" alt="LEGO Star Wars TCS">
+      <h3>LEGO Star Wars TCS<br>R$ 15</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+    <div class="jogo">
+      <img src="sniper_elite.jpg" alt="Sniper Elite">
+      <h3>Sniper Elite<br>R$ 20</h3>
+      <button onclick="rolarParaPagamento()">Comprar</button>
+    </div>
+  </div>
 
-    <main id="inicio">
-        <section class="catalogo">
-            <div class="jogo">
-                <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones 1">
-                <h2>LEGO Indiana Jones 1</h2>
-                <p>R$ 20</p>
-                <button onclick="finalizarCompra('LEGO Indiana Jones 1', 'R$ 20')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
-                <h2>LEGO Indiana Jones 2</h2>
-                <p>R$ 20</p>
-                <button onclick="finalizarCompra('LEGO Indiana Jones 2', 'R$ 20')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="lego-pirates.jpg" alt="LEGO Piratas do Caraíbas">
-                <h2>LEGO Piratas do Caraíbas</h2>
-                <p>R$ 20</p>
-                <button onclick="finalizarCompra('LEGO Piratas do Caraíbas', 'R$ 20')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
-                <h2>LEGO Star Wars II</h2>
-                <p>R$ 25</p>
-                <button onclick="finalizarCompra('LEGO Star Wars II', 'R$ 25')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
-                <h2>LEGO Star Wars III</h2>
-                <p>R$ 30</p>
-                <button onclick="finalizarCompra('LEGO Star Wars III', 'R$ 30')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
-                <h2>LEGO Star Wars TCS</h2>
-                <p>R$ 15</p>
-                <button onclick="finalizarCompra('LEGO Star Wars TCS', 'R$ 15')">Comprar</button>
-            </div>
-            <div class="jogo">
-                <img src="sniper-elite.jpg" alt="Sniper Elite">
-                <h2>Sniper Elite</h2>
-                <p>R$ 20</p>
-                <button onclick="finalizarCompra('Sniper Elite', 'R$ 20')">Comprar</button>
-            </div>
-        </section>
+  <footer id="pagamento">
+    <h2>Finalizar Compra</h2>
+    <button class="whatsapp-button" onclick="window.open('https://wa.me/seunumero?text=Quero%20pedir%20a%20conta%20do%20jogo')">Pedir Conta no WhatsApp</button>
+    <br><br>
+    <button onclick="rolarParaTopo()">Início</button>
+  </footer>
 
-        <section id="finalizar">
-            <h2>Finalizar Compra</h2>
-            <div id="detalhes"></div>
-            <div id="pix-info"></div>
-            <a id="whatsapp-button" class="whatsapp-button" target="_blank">Pedir Conta no WhatsApp</a>
-        </section>
-    </main>
-
-    <footer>
-        <nav>
-            <a href="#inicio">Início</a>
-        </nav>
-    </footer>
-
-    <script>
-        function finalizarCompra(nome, preco) {
-            document.getElementById('detalhes').innerHTML = `
-                <p>Você selecionou: <strong>${nome}</strong></p>
-                <p>Preço: <strong>${preco}</strong></p>
-                <p>Após o pagamento no Pix, clique no botão do WhatsApp para pedir sua conta.</p>
-            `;
-            document.getElementById('pix-info').innerHTML = `
-                <button class="pix-btn" onclick="copiarPix()">Copiar Pix: 417.710.408-66</button>
-            `;
-            const msg = encodeURIComponent(`Olá! Já fiz o pagamento do ${nome} no valor de ${preco}. Gostaria de receber a conta, por favor.`);
-            document.getElementById('whatsapp-button').href = `https://wa.me/5511939053090?text=${msg}`;
-            document.getElementById('finalizar').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function copiarPix() {
-            const pix = '417.710.408-66';
-            navigator.clipboard.writeText(pix).then(() => {
-                alert('Chave Pix copiada: ' + pix);
-            });
-        }
-    </script>
+  <script>
+    function rolarParaPagamento() {
+      document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth' });
+    }
+    function rolarParaTopo() {
+      document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
