@@ -12,15 +12,19 @@ header {
     text-align: center;
 }
 
-header nav a {
+header h1 {
+    margin: 0;
+}
+
+nav a {
     color: white;
     text-decoration: none;
-    margin-left: 15px;
+    margin: 0 10px;
 }
 
 .catalogo {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
     padding: 20px;
 }
@@ -33,9 +37,9 @@ header nav a {
 }
 
 .jogo img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .jogo h2 {
@@ -44,35 +48,41 @@ header nav a {
 }
 
 button {
-    background-color: #28a745;
+    background-color: #00c853;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #00e676;
 }
 
 #finalizar {
     background-color: #1f1f1f;
     padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
+    text-align: center;
 }
 
-#whatsapp-button {
+#finalizar h2 {
+    margin-top: 0;
+}
+
+.pix-btn {
+    margin: 10px 0;
+}
+
+.whatsapp-button {
     display: inline-block;
-    margin-top: 10px;
-    background-color: #25D366;
+    background-color: #25d366;
     color: white;
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
     text-decoration: none;
 }
 
-#whatsapp-button:hover {
+.whatsapp-button:hover {
     background-color: #1ebe57;
 }
