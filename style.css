@@ -1,124 +1,102 @@
 body {
-  background-color: #121212;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
 }
 
 header {
-  background-color: #1f1f1f;
-  padding: 20px;
-  text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
 }
 
-header h1 {
-  color: red;
-  font-size: 36px;
-  margin: 0;
+header .logo {
+    color: green;
+    font-size: 36px;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 nav a {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: red;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 nav a:hover {
-  background-color: darkred;
+    background-color: darkred;
 }
 
 .catalogo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
 .catalogo-item {
-  background-color: #1f1f1f;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .catalogo-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
-.catalogo-item h3 {
-  margin: 10px 0;
-}
-
-.catalogo-item p {
-  margin: 5px 0;
+.catalogo-item h3, .catalogo-item p {
+    margin: 10px 0;
 }
 
 .catalogo-item button {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .catalogo-item button:hover {
-  background-color: darkgreen;
-}
-
-footer {
-  background-color: #1f1f1f;
-  padding: 20px;
-  text-align: center;
-}
-
-footer button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-footer button:hover {
-  background-color: darkred;
+    background-color: darkgreen;
 }
 
 .pagamento {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 30px;
 }
 
 .pagamento button {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .pagamento button:hover {
-  background-color: darkgreen;
+    background-color: darkgreen;
 }
 
-h2 {
-  text-align: center;
-  margin: 30px 0 10px;
-  font-size: 28px;
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 15px;
 }
