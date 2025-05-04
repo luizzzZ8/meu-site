@@ -9,14 +9,14 @@
     <header>
         <h1 class="logo">Jogos 360 Nevex</h1>
         <nav>
-            <a href="#inicio">Início</a>
-            <a href="#catalogo">Catálogo</a>
+            <a href="#lego">LEGO</a>
+            <a href="#acao">AÇÃO / TIRO</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <section id="catalogo">
-        <h2>Catálogo LEGO</h2>
+        <h2 id="lego">Catálogo LEGO</h2>
         <div class="catalogo">
             <div class="catalogo-item">
                 <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
@@ -37,7 +37,7 @@
                 <button onclick="scrollPagamento('LEGO Star Wars TCS', 15)">Comprar</button>
             </div>
             <div class="catalogo-item">
-                <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones">
+                <img src="lego_indiana1.jpg" alt="LEGO Indiana Jones">
                 <h3>LEGO Indiana Jones: As Aventuras Originais</h3>
                 <p>R$ 20</p>
                 <button onclick="scrollPagamento('LEGO Indiana Jones', 20)">Comprar</button>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <h2>Catálogo AÇÃO / TIRO</h2>
+        <h2 id="acao">Catálogo AÇÃO / TIRO</h2>
         <div class="catalogo">
             <div class="catalogo-item">
                 <img src="sniper-elite.jpg" alt="Sniper Elite">
@@ -75,13 +75,19 @@
     </section>
 
     <footer>
+        <nav>
+            <a href="#inicio">Início</a>
+        </nav>
         <p>&copy; 2025 Jogos 360 Nevex</p>
     </footer>
 
     <script>
+        let produtoSelecionado = '';
+
         function scrollPagamento(nome, preco) {
+            produtoSelecionado = `${nome} | R$ ${preco}`;
             document.getElementById('produto-info').innerText =
-                `Produto: ${nome} | Preço: R$ ${preco}\nApós pagamento, entre em contato pelo WhatsApp para pegar a conta.`;
+                `Produto: ${nome} | Preço: R$ ${preco}\nApós pagamento, entre em contato pelo WhatsApp para pegar a conta.\nA conta vem com transferência de licença e é 100% seguro comprar comigo.`;
             document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -91,7 +97,7 @@
         }
 
         function irWhatsapp() {
-            window.open('https://wa.me/5511939053090?text=Ol%C3%A1,%20realizei%20o%20pagamento%20e%20gostaria%20de%20pegar%20minha%20conta.', '_blank');
+            window.open(`https://wa.me/5511939053090?text=Olá,%20realizei%20o%20pagamento%20do%20${encodeURIComponent(produtoSelecionado)}%20e%20gostaria%20de%20pegar%20minha%20conta.`, '_blank');
         }
     </script>
 </body>
