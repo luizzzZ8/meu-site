@@ -1,29 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Jogos 360 Nevex</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .catalogo {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .catalogo-item {
-            width: 200px;
-            text-align: center;
-        }
-        .catalogo-item img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 <body>
-    <header id="inicio">
+    <header>
         <h1 class="logo">Jogos 360 Nevex</h1>
         <nav>
             <a href="#lego">LEGO</a>
@@ -39,42 +22,42 @@
                 <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
                 <h3>LEGO Star Wars II</h3>
                 <p>R$ 25</p>
-                <p>Reviva os momentos épicos da trilogia original de Star Wars com peças LEGO.</p>
+                <p class="descricao">Explore a galáxia em blocos com LEGO e Star Wars combinados.</p>
                 <button onclick="scrollPagamento('LEGO Star Wars II', 25)">Comprar</button>
             </div>
             <div class="catalogo-item">
                 <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
                 <h3>LEGO Star Wars III</h3>
                 <p>R$ 30</p>
-                <p>Baseado na série animada Clone Wars, com novos modos de batalha e fases criativas.</p>
+                <p class="descricao">Aventura e humor na guerra dos clones com LEGO.</p>
                 <button onclick="scrollPagamento('LEGO Star Wars III', 30)">Comprar</button>
             </div>
             <div class="catalogo-item">
                 <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
                 <h3>LEGO Star Wars: TCS</h3>
                 <p>R$ 15</p>
-                <p>A saga completa de Star Wars em um único jogo LEGO!</p>
+                <p class="descricao">A saga completa de Star Wars em versão LEGO interativa.</p>
                 <button onclick="scrollPagamento('LEGO Star Wars TCS', 15)">Comprar</button>
             </div>
             <div class="catalogo-item">
                 <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones">
                 <h3>LEGO Indiana Jones: As Aventuras Originais</h3>
                 <p>R$ 20</p>
-                <p>Explore templos, fuja de armadilhas e descubra tesouros com Indy em LEGO!</p>
+                <p class="descricao">Reviva aventuras clássicas com o toque criativo do LEGO.</p>
                 <button onclick="scrollPagamento('LEGO Indiana Jones', 20)">Comprar</button>
             </div>
             <div class="catalogo-item">
                 <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
                 <h3>LEGO® Indiana Jones™ 2</h3>
                 <p>R$ 20</p>
-                <p>Novas aventuras e fases inéditas com o famoso arqueólogo em versão LEGO.</p>
+                <p class="descricao">Mais ação, mais desafios e muita criatividade em blocos.</p>
                 <button onclick="scrollPagamento('LEGO Indiana Jones 2', 20)">Comprar</button>
             </div>
             <div class="catalogo-item">
                 <img src="lego-pirates.jpg" alt="LEGO Piratas do Caraíbas">
                 <h3>LEGO Piratas do Caraíbas</h3>
                 <p>R$ 20</p>
-                <p>Reviva os filmes de Jack Sparrow em um divertido jogo LEGO!</p>
+                <p class="descricao">Navegue com os piratas em uma jornada cheia de humor e ação.</p>
                 <button onclick="scrollPagamento('LEGO Piratas do Caraíbas', 20)">Comprar</button>
             </div>
         </div>
@@ -85,7 +68,7 @@
                 <img src="sniper-elite.jpg" alt="Sniper Elite">
                 <h3>Sniper Elite</h3>
                 <p>R$ 20</p>
-                <p>Use precisão e estratégia para eliminar alvos em plena Segunda Guerra Mundial.</p>
+                <p class="descricao">Use precisão e estratégia para eliminar alvos em plena Segunda Guerra Mundial.</p>
                 <button onclick="scrollPagamento('Sniper Elite', 20)">Comprar</button>
             </div>
         </div>
@@ -93,7 +76,9 @@
 
     <section id="pagamento" class="pagamento">
         <h2>Finalizar Compra</h2>
-        <p id="produto-info">Selecione um produto acima para ver os detalhes.</p>
+        <div class="mensagem-pagamento">
+            <p id="produto-info">Selecione um produto acima para ver os detalhes.</p>
+        </div>
         <button id="pix-button" onclick="copyPix()">Copiar Pix: 417.710.408-66</button>
         <button id="whatsapp-button" onclick="irWhatsapp()">Ir para WhatsApp</button>
     </section>
@@ -105,7 +90,7 @@
 
     <footer>
         <nav>
-            <a href="#inicio">Início</a>
+            <a href="#inicio" onclick="scrollTop()">Início</a>
         </nav>
         <p>&copy; 2025 Jogos 360 Nevex</p>
     </footer>
@@ -116,7 +101,9 @@
         function scrollPagamento(nome, preco) {
             produtoSelecionado = `${nome} | R$ ${preco}`;
             document.getElementById('produto-info').innerText =
-                `Produto: ${nome} | Preço: R$ ${preco}\nApós pagamento, entre em contato pelo WhatsApp para pegar a conta.\nA conta vem com transferência de licença e é 100% seguro comprar comigo.`;
+                `Produto: ${nome} | Preço: R$ ${preco}
+Após pagamento, entre em contato pelo WhatsApp para pegar a conta.
+A conta vem com transferência de licença e é 100% seguro comprar comigo.`;
             document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -127,6 +114,10 @@
 
         function irWhatsapp() {
             window.open(`https://wa.me/5511939053090?text=Olá,%20realizei%20o%20pagamento%20do%20${encodeURIComponent(produtoSelecionado)}%20e%20gostaria%20de%20pegar%20minha%20conta.`, '_blank');
+        }
+
+        function scrollTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>

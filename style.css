@@ -1,3 +1,4 @@
+
 body {
     background-color: #121212;
     color: white;
@@ -12,7 +13,7 @@ header {
 }
 
 header .logo {
-    color: #00ff00; /* verde neon */
+    color: #00ff00;
     font-size: 36px;
     border: 2px solid #00ff00;
     padding: 10px;
@@ -32,7 +33,7 @@ nav {
 nav a {
     margin: 0 10px;
     padding: 10px 20px;
-    background-color: #ff0000; /* vermelho básico */
+    background-color: #ff0000;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -82,7 +83,7 @@ nav a:hover {
 }
 
 .catalogo-item button {
-    background-color: #00aa00; /* verde escuro */
+    background-color: #00aa00;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -99,8 +100,11 @@ nav a:hover {
 }
 
 .pagamento {
+    background-color: #1f1f1f;
     text-align: center;
     padding: 30px;
+    border-top: 2px solid #00ff00;
+    margin-top: 40px;
 }
 
 .pagamento button {
