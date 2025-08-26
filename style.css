@@ -1,138 +1,176 @@
-
 body {
-    background-color: #121212;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
 
 header {
-    background-color: #1f1f1f;
-    padding: 20px;
-    text-align: center;
+  background-color: #c1121f;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header .logo {
-    color: #00ff00;
-    font-size: 36px;
-    border: 2px solid #00ff00;
-    padding: 10px;
-    border-radius: 10px;
-    transition: transform 0.3s, text-shadow 0.3s;
-}
-
-header .logo:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 10px #00ff00;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 nav {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 nav a {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+  margin: 0 10px;
+  padding: 8px 18px;
+  background-color: #780000;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    background-color: #cc0000;
-    transform: scale(1.1);
+  background-color: #a4161a;
+  transform: scale(1.05);
+}
+
+h2 {
+  text-align: center;
+  margin: 30px 0 15px;
+  color: #ffdddd;
 }
 
 .catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .catalogo-item {
-    background-color: #1f1f1f;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #00ff00;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 .catalogo-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #00ff00;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255,0,0,0.3);
 }
 
 .catalogo-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.catalogo-item img:hover {
-    transform: scale(1.05);
+.catalogo-item h3 {
+  margin: 10px 0 5px;
+  color: #fff;
 }
 
-.catalogo-item h3, .catalogo-item p {
-    margin: 10px 0;
+.preco {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.catalogo-item .descricao {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
 .catalogo-item button {
-    background-color: #00aa00;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .catalogo-item button:hover {
-    background-color: #007700;
-    transform: scale(1.1);
+  background-color: #d90429;
+  transform: scale(1.05);
 }
 
 .pagamento {
-    background-color: #1f1f1f;
-    text-align: center;
-    padding: 30px;
-    border-top: 2px solid #00ff00;
-    margin-top: 40px;
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  border-top: 3px solid #ff4d4d;
 }
 
 .pagamento button {
-    background-color: #00aa00;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+  background-color: #009944;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .pagamento button:hover {
-    background-color: #007700;
-    transform: scale(1.1);
+  background-color: #006633;
+  transform: scale(1.05);
+}
+
+#contato {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+#contato button {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#contato button:hover {
+  background-color: #128c7e;
+  transform: scale(1.05);
 }
 
 footer {
-    background-color: #1f1f1f;
-    text-align: center;
-    padding: 15px;
-    border-top: 2px solid #00ff00;
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #ff4d4d;
+}
+
+footer a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
-    .catalogo {
-        grid-template-columns: 1fr;
-    }
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
 }
