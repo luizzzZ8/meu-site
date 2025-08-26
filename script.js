@@ -14,7 +14,7 @@ function copyPix() {
 
 function irWhatsapp() {
   if (!produtoSelecionado) {
-    alert("Selecione um produto primeiro.");
+    alert('Selecione um produto primeiro.');
     return;
   }
   const numero = '5511939053090';
@@ -25,11 +25,12 @@ function irWhatsapp() {
 
 function irWhatsappContato() {
   const numero = '5511939053090';
-  const mensagem = `Olá, gostaria de saber mais sobre os jogos disponíveis.`;
+  const mensagem = 'Olá, gostaria de tirar dúvidas sobre os jogos disponíveis.';
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
 
+/* Voltar ao topo (logo e botão Início usam esta função) */
 function scrollTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
