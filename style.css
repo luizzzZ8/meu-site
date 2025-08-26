@@ -1,4 +1,3 @@
-/* Rolagem suave em todo o site */
 html { scroll-behavior: smooth; }
 
 body {
@@ -8,9 +7,9 @@ body {
   margin: 0;
 }
 
-/* Compensa o header fixo quando rolar para âncoras */
 #lego, #acao, #contato, #pagamento { scroll-margin-top: 90px; }
 
+/* Header e logo */
 header {
   background-color: #c1121f;
   padding: 15px;
@@ -22,15 +21,19 @@ header {
 
 header .logo {
   color: #fff;
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 34px;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.3s, text-shadow 0.3s;
+  padding: 8px 14px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 header .logo:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 4px #ff4d4d; /* neon reduzido */
+  transform: scale(1.08);
+  box-shadow: 0 0 12px #ff4d4d;
 }
 
 nav { margin-top: 8px; }
@@ -51,6 +54,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Catálogo */
 h2 {
   text-align: center;
   margin: 25px 0 10px;
@@ -75,45 +79,40 @@ h2 {
 
 .catalogo-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 8px rgba(255,0,0,0.22); /* glow menor */
+  box-shadow: 0 0 8px rgba(255,0,0,0.22);
 }
 
 .catalogo-item img {
   width: 100%;
-  height: 200px;      /* altura menor */
+  height: 240px;   /* altura aumentada */
   object-fit: cover;
   border-radius: 8px;
 }
 
-.catalogo-item h3 { margin: 8px 0 4px; color: #fff; }
-
-.preco {
-  color: #ff4d4d;
-  font-weight: 600;
-}
+.catalogo-item h3 { margin: 6px 0 2px; color: #fff; }
+.preco { color: #ff4d4d; font-weight: 700; font-size: 15px; }
 
 .catalogo-item .descricao {
-  font-size: 13px;    /* descrição um pouco menor */
+  font-size: 12px; /* descrição menor */
   color: #ccc;
   margin-bottom: 8px;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .catalogo-item button {
   background-color: #ff4d4d;
   color: #fff;
   border: none;
-  padding: 14px 26px; /* botão comprar maior */
+  padding: 15px 28px; /* maior */
   border-radius: 6px;
   cursor: pointer;
   font-size: 15px;
   transition: background 0.3s, transform 0.3s;
-  outline: none;
 }
 
 .catalogo-item button:hover { background-color: #d90429; transform: scale(1.07); }
-.catalogo-item button:focus { box-shadow: 0 0 0 2px rgba(217,4,41,0.5); }
 
+/* Pagamento */
 .pagamento {
   background-color: #1e1e1e;
   text-align: center;
@@ -122,21 +121,25 @@ h2 {
   border-top: 3px solid #ff4d4d;
 }
 
+.mensagem-pagamento p span {
+  color: #ff4d4d; 
+  font-weight: 700;
+  font-size: 16px;
+}
+
 .pagamento button {
   background-color: #009944;
   color: #fff;
   border: none;
-  padding: 14px 28px;
+  padding: 15px 30px;
   margin: 8px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   transition: background 0.3s, transform 0.3s;
-  outline: none;
 }
 
 .pagamento button:hover { background-color: #006633; transform: scale(1.05); }
-.pagamento button:focus { box-shadow: 0 0 0 2px rgba(0,153,68,0.45); }
 
 .pagamento .info-extra {
   margin-top: 12px;
@@ -144,26 +147,23 @@ h2 {
   color: #ccc;
 }
 
-#contato {
-  text-align: center;
-  padding: 30px 15px;
-}
+/* Contato */
+#contato { text-align: center; padding: 30px 15px; }
 
 #contato button {
   background-color: #25d366;
   color: #fff;
   border: none;
-  padding: 12px 25px;
+  padding: 15px 30px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   transition: background 0.3s, transform 0.3s;
-  outline: none;
 }
 
 #contato button:hover { background-color: #128c7e; transform: scale(1.05); }
-#contato button:focus { box-shadow: 0 0 0 2px rgba(37,211,102,0.45); }
 
+/* Footer */
 footer {
   background-color: #1e1e1e;
   text-align: center;

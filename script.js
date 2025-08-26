@@ -2,8 +2,10 @@ let produtoSelecionado = '';
 
 function scrollPagamento(nome, preco) {
   produtoSelecionado = `${nome} | R$ ${preco}`;
-  document.getElementById('produto-info').innerText =
-    `Produto: ${nome} | Preço: R$ ${preco}\nApós pagamento, entre em contato pelo WhatsApp para pegar a conta.\nA conta vem com transferência de licença e é 100% segura.`;
+  document.getElementById('produto-info').innerHTML =
+    `Produto: <span>${nome}</span> | Preço: <span>R$ ${preco}</span><br>
+    Após pagamento, entre em contato pelo WhatsApp para pegar a conta.<br>
+    A conta vem com transferência de licença e é 100% segura.`;
   document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -30,7 +32,6 @@ function irWhatsappContato() {
   window.open(url, '_blank');
 }
 
-/* Voltar ao topo (logo e botão Início usam esta função) */
 function scrollTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
