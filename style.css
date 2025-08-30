@@ -12,11 +12,16 @@ header {
   padding: 20px;
 }
 .logo, #logo {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff004c, 0 0 30px #ff5d8f, 0 0 40px #ff004c;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff004c, 0 0 20px #ff5d8f, 0 0 40px #ff004c;
+  animation: neonPulse 1.5s infinite alternate;
+}
+@keyframes neonPulse {
+  from { text-shadow: 0 0 5px #fff, 0 0 15px #ff004c; }
+  to { text-shadow: 0 0 20px #fff, 0 0 35px #ff5d8f; }
 }
 nav {
   margin-top: 15px;
@@ -36,6 +41,18 @@ nav button {
 nav button:hover {
   background: #ff004c;
   box-shadow: 0 0 14px #ff004c;
+}
+
+/* BARRA PESQUISA */
+.pesquisa {
+  margin-top: 15px;
+}
+#barraPesquisa {
+  padding: 10px 14px;
+  width: 220px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
 }
 
 /* SEÇÕES */
@@ -69,7 +86,7 @@ h2 {
 }
 .catalogo-item img {
   width: 100%;
-  height: 380px;
+  height: 320px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 22px rgba(255,93,143,.7);

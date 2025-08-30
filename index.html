@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogos 360 Nevex</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
-
-  <!-- Cabeçalho -->
-  <header id="topo">
-    <h1 id="logo">Jogos 360 Nevex</h1>
+<body id="topo">
+  <header>
+    <div id="logo" class="logo">Jogos 360 Nevex</div>
     <nav>
       <button onclick="scrollSuave('#lego')">LEGO</button>
       <button onclick="scrollSuave('#acao')">AÇÃO / TIRO</button>
       <button onclick="scrollSuave('#contato')">Contato</button>
     </nav>
+    <div class="pesquisa">
+      <input type="text" id="barraPesquisa" placeholder="Pesquisar jogo...">
+    </div>
   </header>
 
   <!-- Catálogo LEGO -->
@@ -45,20 +45,6 @@
         <button onclick="scrollPagamento('LEGO Star Wars: TCS', 15)">Comprar</button>
       </div>
       <div class="catalogo-item">
-        <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones">
-        <h3>LEGO Indiana Jones: As Aventuras Originais</h3>
-        <p class="preco">R$ 20</p>
-        <p>Reviva aventuras clássicas com o toque criativo do LEGO.</p>
-        <button onclick="scrollPagamento('LEGO Indiana Jones', 20)">Comprar</button>
-      </div>
-      <div class="catalogo-item">
-        <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones 2">
-        <h3>LEGO Indiana Jones 2</h3>
-        <p class="preco">R$ 20</p>
-        <p>Mais ação, mais desafios e muita criatividade em blocos.</p>
-        <button onclick="scrollPagamento('LEGO Indiana Jones 2', 20)">Comprar</button>
-      </div>
-      <div class="catalogo-item">
         <img src="lego-piratas.jpg" alt="LEGO Piratas do Caribe">
         <h3>LEGO Piratas do Caribe</h3>
         <p class="preco">R$ 20</p>
@@ -68,7 +54,7 @@
     </div>
   </section>
 
-  <!-- Catálogo Ação/Tiro -->
+  <!-- Catálogo AÇÃO / TIRO -->
   <section id="acao">
     <h2>Catálogo AÇÃO / TIRO</h2>
     <div class="catalogo">
@@ -82,26 +68,26 @@
     </div>
   </section>
 
-  <!-- Finalizar Compra -->
+  <!-- Finalizar compra -->
   <section id="finalizar">
     <h2>Finalizar Compra</h2>
-    <p id="resumo">Selecione um produto acima para ver os detalhes.</p>
-    <button id="pixBtn">Copiar Pix: 417.710.408-66</button>
-    <button id="whatsBtn">Ir para WhatsApp após a COMPRA!</button>
+    <p id="resumo">Selecione um jogo para ver os detalhes da compra.</p>
+    <button id="pixBtn">Copiar Pix (CPF: 417.710.408-66)</button>
+    <button id="whatsBtn">Ir para o WhatsApp após a COMPRA</button>
   </section>
 
   <!-- Contato -->
   <section id="contato">
     <h2>Contato</h2>
-    <p>Entre em contato com o número abaixo para tirar dúvidas sobre como funciona a loja e os jogos disponíveis.</p>
-    <button onclick="abrirWhatsAppContato()">Ir para WhatsApp</button>
+    <p>Entre em contato com o número abaixo para tirar dúvidas sobre os jogos e a loja:</p>
+    <button onclick="abrirWhatsAppContato()">Ir para o WhatsApp</button>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <button onclick="scrollSuave('#topo')">Início</button>
-    <p>© 2025 Jogos 360 Nevex</p>
+    <p>&copy; 2025 Jogos 360 Nevex</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

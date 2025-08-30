@@ -9,9 +9,12 @@ function scrollSuave(id) {
 
 /* LOGO volta ao topo */
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("logo").addEventListener("click", () => {
-    scrollSuave("#topo");
-  });
+  const logo = document.getElementById("logo");
+  if (logo) {
+    logo.addEventListener("click", () => {
+      document.querySelector("#topo").scrollIntoView({ behavior: "smooth" });
+    });
+  }
 });
 
 /* Mostrar produto ao clicar em Comprar */
@@ -51,3 +54,12 @@ function abrirWhatsAppContato() {
   const mensagem = "Olá! Gostaria de saber mais sobre como funciona a loja e também sobre os jogos.";
   window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, "_blank");
 }
+
+/* PESQUISA DE JOGOS */
+document.getElementById("barraPesquisa").addEventListener("input", function() {
+  const termo = this.value.toLowerCase();
+  document.querySelectorAll(".catalogo-item").forEach(item => {
+    const titulo = item.querySelector("h3").textContent.toLowerCase();
+    item.style.display = titulo.includes(termo) ? "block" : "none";
+  });
+});
