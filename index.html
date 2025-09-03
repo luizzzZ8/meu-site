@@ -12,9 +12,9 @@
     <h1 class="logo" onclick="scrollTop()">Jogos 360 Nevex</h1>
 
     <nav>
-      <a href="#lego">LEGO</a>
-      <a href="#acao">AÇÃO / TIRO</a>
-      <a href="#contato">Contato</a>
+      <a href="#lego" onclick="scrollSuave('#lego')">LEGO</a>
+      <a href="#acao" onclick="scrollSuave('#acao')">AÇÃO / TIRO</a>
+      <a href="#contato" onclick="scrollSuave('#contato')">Contato</a>
     </nav>
 
     <!-- Barra de pesquisa -->
@@ -27,7 +27,7 @@
     <!-- CATÁLOGO LEGO -->
     <section id="catalogo">
       <h2 id="lego">Catálogo LEGO</h2>
-      <div class="carousel">
+      <div class="carousel-wrapper">
         <button class="prev" onclick="moverSlide(-1, 'lego')">&#10094;</button>
         <div class="carousel-container" id="carousel-lego">
           <div class="catalogo-item">
@@ -83,7 +83,7 @@
 
       <!-- CATÁLOGO AÇÃO/TIRO -->
       <h2 id="acao">Catálogo AÇÃO / TIRO</h2>
-      <div class="carousel">
+      <div class="carousel-wrapper">
         <button class="prev" onclick="moverSlide(-1, 'acao')">&#10094;</button>
         <div class="carousel-container" id="carousel-acao">
           <div class="catalogo-item">
@@ -120,7 +120,7 @@
 
   <footer>
     <nav>
-      <a href="#inicio">Início</a>
+      <a href="#inicio" onclick="scrollSuave('#inicio')">Início</a>
     </nav>
     <p>&copy; 2025 Jogos 360 Nevex</p>
   </footer>

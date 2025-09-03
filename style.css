@@ -72,35 +72,39 @@ h2 {
   text-shadow: 0 0 15px #ff5d8f;
 }
 
-/* CAROUSEL */
-.carousel {
+/* CARROSSEL */
+.carousel-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  margin: 0 auto 30px;
+  max-width: 600px;
 }
 .carousel-container {
   display: flex;
   gap: 25px;
   transition: transform 0.5s ease-in-out;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
 }
 .prev, .next {
-  background: rgba(255, 0, 76, 0.8);
+  background: rgba(255, 0, 76, 0.6);
   border: none;
   color: #fff;
-  font-size: 28px;
+  font-size: 40px;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   position: absolute;
-  top: 40%;
+  top: 45%;
   z-index: 10;
   transition: 0.3s;
 }
 .prev:hover, .next:hover {
-  background: #ff5d8f;
-  box-shadow: 0 0 15px #ff5d8f;
+  background: rgba(255, 0, 76, 0.9);
+  box-shadow: 0 0 20px #ff004c;
 }
 .prev { left: 10px; }
 .next { right: 10px; }

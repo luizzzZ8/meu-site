@@ -1,18 +1,16 @@
 let produtoSelecionado = "";
-let slideIndex = { lego: 0, acao: 0 };
 
-// Scroll suave ao clicar em links e botões
+// Scroll suave corrigido
 function scrollSuave(id) {
-  const el = document.querySelector(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
+  document.querySelector(id).scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// Voltar ao topo ao clicar na logo
+// Voltar ao topo
 function scrollTop() {
-  document.querySelector("#inicio").scrollIntoView({ behavior: "smooth" });
+  scrollSuave("#inicio");
 }
 
-// Exibir informações do jogo na área de pagamento
+// Exibir informações do jogo
 function scrollPagamento(nome, preco) {
   produtoSelecionado = `${nome} | R$ ${preco}`;
   document.getElementById("produto-info").innerHTML =
@@ -30,7 +28,7 @@ function copyPix() {
   });
 }
 
-// WhatsApp após compra
+// WhatsApp compra
 function irWhatsapp() {
   if (!produtoSelecionado) {
     alert("Selecione um produto primeiro.");
@@ -58,13 +56,50 @@ function filtrarJogos() {
   });
 }
 
-// Carrossel
+// Carrossel com 2 jogos por vez
 function moverSlide(direcao, tipo) {
   const container = document.getElementById(`carousel-${tipo}`);
-  const itens = container.querySelectorAll(".catalogo-item");
-  const total = itens.length;
-
-  slideIndex[tipo] = (slideIndex[tipo] + direcao + total) % total;
-  const largura = itens[0].offsetWidth + 25;
-  container.style.transform = `translateX(-${slideIndex[tipo] * largura}px)`;
+  const item = container.querySelector(".catalogo-item");
+  if (!item) return;
+  const largura = (item.offsetWidth + 25) * 2; // 2 jogos por vez
+  container.scrollBy({
+    left: direcao * largura,
+    behavior: "smooth"
+  });
 }
+
+// Arrastar com dedo/mouse
+document.querySelectorAll(".carousel-container").forEach(container => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener("mousedown", e => {
+    isDown = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+  container.addEventListener("mouseleave", () => { isDown = false; });
+  container.addEventListener("mouseup", () => { isDown = false; });
+  container.addEventListener("mousemove", e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; 
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // Suporte para celular (touch)
+  container.addEventListener("touchstart", e => {
+    isDown = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+  container.addEventListener("touchend", () => { isDown = false; });
+  container.addEventListener("touchmove", e => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+  });
+});
