@@ -1,11 +1,10 @@
 let produtoSelecionado = "";
+let slideIndex = { lego: 0, acao: 0 };
 
 // Scroll suave ao clicar em links e botões
 function scrollSuave(id) {
   const el = document.querySelector(id);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
-  }
+  if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
 // Voltar ao topo ao clicar na logo
@@ -53,13 +52,19 @@ function irWhatsappContato() {
 function filtrarJogos() {
   const termo = document.getElementById("search").value.toLowerCase();
   const itens = document.querySelectorAll(".catalogo-item");
-
   itens.forEach(item => {
     const titulo = item.querySelector("h3").textContent.toLowerCase();
-    if (titulo.includes(termo)) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
+    item.style.display = titulo.includes(termo) ? "block" : "none";
   });
+}
+
+// Carrossel
+function moverSlide(direcao, tipo) {
+  const container = document.getElementById(`carousel-${tipo}`);
+  const itens = container.querySelectorAll(".catalogo-item");
+  const total = itens.length;
+
+  slideIndex[tipo] = (slideIndex[tipo] + direcao + total) % total;
+  const largura = itens[0].offsetWidth + 25;
+  container.style.transform = `translateX(-${slideIndex[tipo] * largura}px)`;
 }

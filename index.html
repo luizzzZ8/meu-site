@@ -24,70 +24,81 @@
   </header>
 
   <main>
+    <!-- CATÁLOGO LEGO -->
     <section id="catalogo">
       <h2 id="lego">Catálogo LEGO</h2>
-      <div class="catalogo">
-        <div class="catalogo-item">
-          <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
-          <h3>LEGO Star Wars II</h3>
-          <p class="preco">R$ 20</p>
-          <p class="descricao">Explore a galáxia com LEGO e Star Wars em blocos.</p>
-          <button onclick="scrollPagamento('LEGO Star Wars II', 20)">Comprar</button>
-        </div>
+      <div class="carousel">
+        <button class="prev" onclick="moverSlide(-1, 'lego')">&#10094;</button>
+        <div class="carousel-container" id="carousel-lego">
+          <div class="catalogo-item">
+            <img src="lego-sw2.jpg" alt="LEGO Star Wars II" />
+            <h3>LEGO Star Wars II</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">Explore a galáxia com LEGO e Star Wars em blocos.</p>
+            <button onclick="scrollPagamento('LEGO Star Wars II', 20)">Comprar</button>
+          </div>
 
-        <div class="catalogo-item">
-          <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
-          <h3>LEGO Star Wars III</h3>
-          <p class="preco">R$ 20</p>
-          <p class="descricao">Aventura e humor na guerra dos clones com LEGO.</p>
-          <button onclick="scrollPagamento('LEGO Star Wars III', 20)">Comprar</button>
-        </div>
+          <div class="catalogo-item">
+            <img src="lego-sw3.jpg" alt="LEGO Star Wars III" />
+            <h3>LEGO Star Wars III</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">Aventura e humor na guerra dos clones com LEGO.</p>
+            <button onclick="scrollPagamento('LEGO Star Wars III', 20)">Comprar</button>
+          </div>
 
-        <div class="catalogo-item">
-          <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS" />
-          <h3>LEGO Star Wars: TCS</h3>
-          <p class="preco">R$ 15</p>
-          <p class="descricao">A saga completa de Star Wars em versão LEGO.</p>
-          <button onclick="scrollPagamento('LEGO Star Wars TCS', 15)">Comprar</button>
-        </div>
+          <div class="catalogo-item">
+            <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS" />
+            <h3>LEGO Star Wars: TCS</h3>
+            <p class="preco">R$ 15</p>
+            <p class="descricao">A saga completa de Star Wars em versão LEGO.</p>
+            <button onclick="scrollPagamento('LEGO Star Wars TCS', 15)">Comprar</button>
+          </div>
 
-        <div class="catalogo-item">
-          <img src="lego-piratas.jpg" alt="LEGO Piratas do Caribe" />
-          <h3>LEGO Piratas do Caribe</h3>
-          <p class="preco">R$ 25</p>
-          <p class="descricao">Aventure-se pelos mares em versão LEGO.</p>
-          <button onclick="scrollPagamento('LEGO Piratas do Caribe', 25)">Comprar</button>
-        </div>
+          <div class="catalogo-item">
+            <img src="lego-piratas.jpg?v=3" alt="LEGO Piratas do Caribe" />
+            <h3>LEGO Piratas do Caribe</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">Aventure-se pelos mares em versão LEGO.</p>
+            <button onclick="scrollPagamento('LEGO Piratas do Caribe', 20)">Comprar</button>
+          </div>
 
-        <div class="catalogo-item">
-          <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones I" />
-          <h3>LEGO Indiana Jones I</h3>
-          <p class="preco">R$ 20</p>
-          <p class="descricao">As aventuras clássicas do arqueólogo mais famoso.</p>
-          <button onclick="scrollPagamento('LEGO Indiana Jones I', 20)">Comprar</button>
-        </div>
+          <div class="catalogo-item">
+            <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones I" />
+            <h3>LEGO Indiana Jones I</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">As aventuras clássicas do arqueólogo mais famoso.</p>
+            <button onclick="scrollPagamento('LEGO Indiana Jones I', 20)">Comprar</button>
+          </div>
 
-        <div class="catalogo-item">
-          <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones II" />
-          <h3>LEGO Indiana Jones II</h3>
-          <p class="preco">R$ 20</p>
-          <p class="descricao">Novas histórias e fases em versão LEGO.</p>
-          <button onclick="scrollPagamento('LEGO Indiana Jones II', 20)">Comprar</button>
+          <div class="catalogo-item">
+            <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones II" />
+            <h3>LEGO Indiana Jones II</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">Novas histórias e fases em versão LEGO.</p>
+            <button onclick="scrollPagamento('LEGO Indiana Jones II', 20)">Comprar</button>
+          </div>
         </div>
+        <button class="next" onclick="moverSlide(1, 'lego')">&#10095;</button>
       </div>
 
+      <!-- CATÁLOGO AÇÃO/TIRO -->
       <h2 id="acao">Catálogo AÇÃO / TIRO</h2>
-      <div class="catalogo">
-        <div class="catalogo-item">
-          <img src="sniper-elite.jpg" alt="Sniper Elite" />
-          <h3>Sniper Elite</h3>
-          <p class="preco">R$ 20</p>
-          <p class="descricao">Precisão e estratégia na Segunda Guerra Mundial.</p>
-          <button onclick="scrollPagamento('Sniper Elite', 20)">Comprar</button>
+      <div class="carousel">
+        <button class="prev" onclick="moverSlide(-1, 'acao')">&#10094;</button>
+        <div class="carousel-container" id="carousel-acao">
+          <div class="catalogo-item">
+            <img src="sniper-elite.jpg" alt="Sniper Elite" />
+            <h3>Sniper Elite</h3>
+            <p class="preco">R$ 20</p>
+            <p class="descricao">Precisão e estratégia na Segunda Guerra Mundial.</p>
+            <button onclick="scrollPagamento('Sniper Elite', 20)">Comprar</button>
+          </div>
         </div>
+        <button class="next" onclick="moverSlide(1, 'acao')">&#10095;</button>
       </div>
     </section>
 
+    <!-- PAGAMENTO -->
     <section id="pagamento" class="pagamento">
       <h2>Finalizar Compra</h2>
       <div class="mensagem-pagamento">
@@ -99,6 +110,7 @@
       <p class="info-extra">Após o pagamento, use o botão acima para falar comigo no WhatsApp e receber sua conta.</p>
     </section>
 
+    <!-- CONTATO -->
     <section id="contato">
       <h2>Contato</h2>
       <p>Entre em contato com o número abaixo para saber mais sobre a loja e os jogos disponíveis:</p>
