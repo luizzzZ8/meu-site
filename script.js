@@ -1,105 +1,126 @@
-let produtoSelecionado = "";
+// Número oficial de contato (E.164, sem espaços)
+const WHATSAPP_NUMBER = "5511939053090";
 
-// Scroll suave corrigido
-function scrollSuave(id) {
-  document.querySelector(id).scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-// Voltar ao topo
-function scrollTop() {
-  scrollSuave("#inicio");
-}
-
-// Exibir informações do jogo
-function scrollPagamento(nome, preco) {
-  produtoSelecionado = `${nome} | R$ ${preco}`;
-  document.getElementById("produto-info").innerHTML =
-    `Produto: <span style="color:#21e6c1; font-weight:bold;">${nome}</span> | Preço: <span style="color:#ff5d8f; font-weight:bold;">R$ ${preco}</span>`;
-  scrollSuave("#pagamento");
-}
-
-// Copiar Pix
-function copyPix() {
-  navigator.clipboard.writeText("417.710.408-66").then(() => {
-    const btn = document.getElementById("pix-button");
-    const original = btn.textContent;
-    btn.textContent = "Pix copiado!";
-    setTimeout(() => (btn.textContent = original), 1200);
-  });
-}
-
-// WhatsApp compra
-function irWhatsapp() {
-  if (!produtoSelecionado) {
-    alert("Selecione um produto primeiro.");
-    return;
+function scrollToSection(id) {
+  if (id === 'top') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
-  const numero = "5511939053090";
-  const mensagem = `Olá, já realizei o pagamento do ${produtoSelecionado} e gostaria de receber minha conta.`;
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, "_blank");
 }
 
-// WhatsApp contato
-function irWhatsappContato() {
-  const numero = "5511939053090";
-  const mensagem = "Olá! Gostaria de saber mais sobre como funciona a loja e também sobre os jogos disponíveis.";
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, "_blank");
+// Guarda o jogo selecionado para montar a mensagem do WhatsApp
+let selectedGameName = null;
+let selectedGamePrice = null;
+
+function selectGame(name, price) {
+  selectedGameName = name;
+  selectedGamePrice = price;
+  const selecionado = document.getElementById('selecionado');
+  selecionado.innerText = `Você selecionou: ${name} - R$ ${price}`;
+  // rola suave até a seção de finalizar
+  document.getElementById('finalizar').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Barra de pesquisa
-function filtrarJogos() {
-  const termo = document.getElementById("search").value.toLowerCase();
-  const itens = document.querySelectorAll(".catalogo-item");
-  itens.forEach(item => {
-    const titulo = item.querySelector("h3").textContent.toLowerCase();
-    item.style.display = titulo.includes(termo) ? "block" : "none";
-  });
-}
-
-// Carrossel com 2 jogos por vez
-function moverSlide(direcao, tipo) {
-  const container = document.getElementById(`carousel-${tipo}`);
-  const item = container.querySelector(".catalogo-item");
-  if (!item) return;
-  const largura = (item.offsetWidth + 25) * 2; // 2 jogos por vez
-  container.scrollBy({
-    left: direcao * largura,
-    behavior: "smooth"
-  });
-}
-
-// Arrastar com dedo/mouse
-document.querySelectorAll(".carousel-container").forEach(container => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  container.addEventListener("mousedown", e => {
-    isDown = true;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-  });
-  container.addEventListener("mouseleave", () => { isDown = false; });
-  container.addEventListener("mouseup", () => { isDown = false; });
-  container.addEventListener("mousemove", e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; 
-    container.scrollLeft = scrollLeft - walk;
-  });
-
-  // Suporte para celular (touch)
-  container.addEventListener("touchstart", e => {
-    isDown = true;
-    startX = e.touches[0].pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-  });
-  container.addEventListener("touchend", () => { isDown = false; });
-  container.addEventListener("touchmove", e => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (x - startX) * 2;
-    container.scrollLeft = scrollLeft - walk;
+// Botão Pix: copiar chave
+document.getElementById("pix").addEventListener("click", function () {
+  navigator.clipboard.writeText("417.710.408-66").then(() => {
+    alert("Chave Pix copiada!");
   });
 });
+
+// Botão WhatsApp após a compra
+document.getElementById("whatsapp").addEventListener("click", function () {
+  let mensagem;
+  if (selectedGameName && selectedGamePrice) {
+    mensagem = `Olá! Já realizei o pagamento do ${selectedGameName} por R$ ${selectedGamePrice} e gostaria de receber minha conta.`;
+  } else {
+    mensagem = "Olá! Já realizei o pagamento e gostaria de receber minha conta.";
+  }
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, "_blank");
+});
+
+// Botão WhatsApp na seção Contato
+document.getElementById("whatsapp-contato").addEventListener("click", function () {
+  const msg = "Olá! Gostaria de saber mais sobre como funciona a loja e também sobre os jogos disponíveis.";
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
+});
+
+/* Carrossel — 2 cards por vez + setas + arrastar */
+let carousels = document.querySelectorAll('.carousel');
+
+carousels.forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
+
+  let index = 0;
+  const visibleCards = 2; // mostra 2 por vez
+
+  function cardWidth() {
+    return track.children[0].offsetWidth + 20; // largura + gap
+  }
+  function maxIndex() {
+    return Math.max(track.children.length - visibleCards, 0);
+  }
+  function updateCarousel() {
+    track.style.transform = `translateX(${-index * cardWidth()}px)`;
+  }
+
+  next.addEventListener('click', () => {
+    if (index < maxIndex()) {
+      index++;
+      updateCarousel();
+    }
+  });
+
+  prev.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  });
+
+  // Arrastar com mouse/touch
+  let startX, startIndex, isDown = false;
+
+  const startDrag = (pageX) => {
+    isDown = true;
+    startX = pageX;
+    startIndex = index;
+  };
+  const moveDrag = (pageX) => {
+    if (!isDown) return;
+    const delta = pageX - startX;
+    const step = delta / cardWidth();
+    index = Math.min(Math.max(startIndex - step, 0), maxIndex());
+    updateCarousel();
+  };
+  const endDrag = () => { isDown = false; };
+
+  // mouse
+  track.addEventListener('mousedown', e => startDrag(e.pageX));
+  track.addEventListener('mousemove', e => moveDrag(e.pageX));
+  track.addEventListener('mouseup', endDrag);
+  track.addEventListener('mouseleave', endDrag);
+
+  // touch
+  track.addEventListener('touchstart', e => startDrag(e.touches[0].pageX), { passive: true });
+  track.addEventListener('touchmove',  e => moveDrag(e.touches[0].pageX), { passive: true });
+  track.addEventListener('touchend',   endDrag);
+
+  // Inicializa posição
+  updateCarousel();
+});
+
+/* Busca por título */
+function searchGames() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    let title = card.querySelector("h3").innerText.toLowerCase();
+    card.style.display = title.includes(input) ? "block" : "none";
+  });
+}

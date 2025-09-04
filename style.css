@@ -1,237 +1,196 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* Base */
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #111;
   color: #fff;
-  line-height: 1.6;
-}
-
-/* HEADER */
-header {
-  background: linear-gradient(90deg, #ff004c, #ff5d8f);
-  padding: 20px;
   text-align: center;
-}
-
-header .logo {
-  font-size: 36px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #fff;
-  text-shadow: 0 0 8px #fff, 0 0 15px #ff004c, 0 0 25px #ff5d8f;
-  transition: transform 0.2s ease;
-}
-header .logo:hover {
-  transform: scale(1.05);
-}
-
-header nav {
-  margin: 15px 0;
-}
-header nav a {
-  margin: 0 10px;
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: #c00;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-header nav a:hover {
-  background: #ff004c;
-  box-shadow: 0 0 12px #ff004c;
-}
-
-.pesquisa {
-  margin-top: 10px;
-}
-#search {
-  padding: 10px;
-  width: 240px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-
-/* SEÇÕES */
-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 15px #ff5d8f;
-}
-
-/* CARROSSEL */
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto 30px;
-  max-width: 600px;
-}
-.carousel-container {
-  display: flex;
-  gap: 25px;
-  transition: transform 0.5s ease-in-out;
-  overflow-x: auto;
   scroll-behavior: smooth;
 }
-.carousel-container::-webkit-scrollbar {
-  display: none;
+
+/* Header */
+header {
+  background: linear-gradient(to right, #ff0077, #ff4c4c);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 8px #fff, 0 0 15px #ff0077, 0 0 25px #ff4c8b;
+}
+nav {
+  margin-top: 10px;
+}
+nav button {
+  background: #e60050;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+#search {
+  margin-top: 10px;
+  padding: 8px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Seções */
+section {
+  padding: 40px 10px;
+}
+h2 {
+  margin-bottom: 20px;
+  color: #ff4c8b;
+  text-shadow: 0 0 12px #ff4c8b;
+}
+
+/* Carrossel */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
 }
 .prev, .next {
-  background: rgba(255, 0, 76, 0.6);
-  border: none;
-  color: #fff;
-  font-size: 40px;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 50%;
   position: absolute;
-  top: 45%;
-  z-index: 10;
-  transition: 0.3s;
-}
-.prev:hover, .next:hover {
-  background: rgba(255, 0, 76, 0.9);
-  box-shadow: 0 0 20px #ff004c;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 0, 119, 0.6);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 .prev { left: 10px; }
 .next { right: 10px; }
+.prev:hover, .next:hover {
+  background: rgba(255, 0, 119, 0.9);
+  box-shadow: 0 0 18px #ff0077;
+}
 
-/* CATÁLOGO ITEM */
-.catalogo-item {
-  background: #222;
-  border-radius: 12px;
-  width: 260px;
-  padding: 15px;
-  box-shadow: 0 0 15px rgba(255, 0, 76, 0.5);
-  transition: transform 0.3s;
-  flex-shrink: 0;
-}
-.catalogo-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 0, 76, 0.8);
-}
-.catalogo-item img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
+/* Cards dos jogos */
+.card {
+  background: #1c1c1c;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,93,143,0.7);
+  padding: 15px;
+  box-shadow: 0 0 15px #ff0077;
+  width: 220px;
+  flex: 0 0 auto;
+  transition: transform .25s ease;
 }
-.catalogo-item h3 {
-  margin: 12px 0 6px;
+.card:hover { transform: scale(1.03); }
+.card img {
+  width: 100%;
+  height: 320px;              /* levemente maior para preencher melhor */
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 18px rgba(255, 76, 139, .7);
+}
+.price {
   font-size: 18px;
-}
-.catalogo-item .preco {
+  color: #ff3366;
   font-weight: bold;
-  font-size: 20px;
-  color: #ff5d8f;
-  text-shadow: 0 0 10px #ff004c;
+  text-shadow: 0 0 10px #ff3366;
 }
-.catalogo-item .descricao {
-  color: #ddd;
-}
-.catalogo-item button {
+.buy {
+  background: #ff0077;
+  color: white;
+  padding: 10px;
   margin-top: 10px;
-  padding: 12px 18px;
-  background: #ff004c;
-  color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 16px;
 }
-.catalogo-item button:hover {
-  background: #ff5d8f;
-  box-shadow: 0 0 15px #ff5d8f;
+.buy:hover {
+  background: #ff4c8b;
+  box-shadow: 0 0 15px #ff4c8b;
 }
 
-/* PAGAMENTO */
-.pagamento p {
-  margin: 15px 0;
-}
-#pix-button, #whatsapp-button {
-  display: block;
-  margin: 10px auto;
-  padding: 14px 20px;
-  font-size: 16px;
-  font-weight: bold;
+/* Finalizar compra */
+#finalizar #pix, #finalizar #whatsapp {
+  background: #00cc66;
+  margin: 10px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-}
-#pix-button {
-  background: #21e6c1;
-  color: #111;
-}
-#pix-button:hover {
-  box-shadow: 0 0 15px #21e6c1;
-}
-#whatsapp-button {
-  background: #25d366;
+  font-size: 16px;
   color: #fff;
 }
-#whatsapp-button:hover {
-  box-shadow: 0 0 15px #25d366;
+#finalizar #whatsapp { background: #25d366; }
+#finalizar #pix:hover { box-shadow: 0 0 14px #00cc66; }
+#finalizar #whatsapp:hover { box-shadow: 0 0 14px #25d366; }
+
+.infos-importantes {
+  margin: 15px auto 20px;
+  max-width: 880px;
+  background: #ff0077;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 22px #ff4c8b;
 }
-.info-extra {
-  margin-top: 15px;
+.infos-importantes h3 {
+  margin: 0 0 8px;
+}
+.infos-importantes p {
+  margin: 6px 0;
   font-size: 14px;
-  color: #ccc;
+}
+.infos-importantes .alerta {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 15px;
+  text-shadow: 0 0 10px #ff0000;
 }
 
-/* CONTATO */
+/* Contato */
 #contato button {
-  margin-top: 15px;
-  padding: 14px 22px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
   background: #25d366;
   color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-#contato button:hover {
-  box-shadow: 0 0 15px #25d366;
-}
-
-/* FOOTER */
-footer {
-  background: #111;
-  padding: 20px;
-  margin-top: 20px;
-}
-footer nav a {
-  padding: 10px 16px;
-  background: #ff004c;
-  color: #fff;
+  padding: 12px 18px;
+  border: none;
   border-radius: 6px;
-  text-decoration: none;
+  cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
 }
-footer nav a:hover {
-  background: #ff5d8f;
-  box-shadow: 0 0 12px #ff5d8f;
+#contato button:hover { box-shadow: 0 0 14px #25d366; }
+
+/* Footer centralizado */
+footer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centraliza botão e texto */
+  gap: 10px;
 }
-footer p {
-  margin-top: 10px;
-  color: #bbb;
+footer button {
+  background: #ff0077;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+footer p { margin: 0; }
