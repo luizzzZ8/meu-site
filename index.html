@@ -4,119 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogos 360 Nevex</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
   <header>
-    <!-- Logo volta ao topo com rolagem suave -->
-    <h1 onclick="scrollToSection('top')">Jogos 360 Nevex</h1>
+    <h1 id="logo">Jogos 360 Nevex</h1>
     <nav>
       <button onclick="scrollToSection('lego')">LEGO</button>
       <button onclick="scrollToSection('acao')">AÇÃO / TIRO</button>
       <button onclick="scrollToSection('contato')">Contato</button>
     </nav>
-    <input type="text" id="search" placeholder="Pesquisar jogo..." onkeyup="searchGames()">
+    <input type="text" id="search" placeholder="Pesquisar jogo..." onkeyup="searchGame()">
   </header>
 
   <main>
-    <!-- Catálogo LEGO -->
     <section id="lego">
       <h2>Catálogo LEGO</h2>
       <div class="carousel">
-        <button class="prev">&#10094;</button>
+        <button class="prev" onclick="moveCarousel(this, -1)">&#10094;</button>
         <div class="carousel-track">
           <div class="card">
             <img src="lego-sw2.jpg" alt="LEGO Star Wars II">
             <h3>LEGO Star Wars II</h3>
             <p class="price">R$ 15</p>
             <p>Explore a galáxia com LEGO e Star Wars em blocos.</p>
-            <button class="buy" onclick="selectGame('LEGO Star Wars II', 15)">Comprar</button>
+            <button onclick="selectGame('LEGO Star Wars II', 15)">Comprar</button>
           </div>
           <div class="card">
             <img src="lego-sw3.jpg" alt="LEGO Star Wars III">
             <h3>LEGO Star Wars III</h3>
             <p class="price">R$ 20</p>
             <p>Aventura e humor na guerra dos clones com LEGO.</p>
-            <button class="buy" onclick="selectGame('LEGO Star Wars III', 20)">Comprar</button>
+            <button onclick="selectGame('LEGO Star Wars III', 20)">Comprar</button>
           </div>
           <div class="card">
-            <img src="lego-tcs.jpg" alt="LEGO Star Wars TCS">
+            <img src="lego-tcs.jpg" alt="LEGO Star Wars: TCS">
             <h3>LEGO Star Wars: TCS</h3>
             <p class="price">R$ 15</p>
             <p>A saga completa de Star Wars em versão LEGO.</p>
-            <button class="buy" onclick="selectGame('LEGO Star Wars: TCS', 15)">Comprar</button>
+            <button onclick="selectGame('LEGO Star Wars: TCS', 15)">Comprar</button>
           </div>
           <div class="card">
             <img src="lego-piratas.jpg" alt="LEGO Piratas do Caribe">
             <h3>LEGO Piratas do Caribe</h3>
             <p class="price">R$ 20</p>
             <p>Aventure-se pelos mares em versão LEGO.</p>
-            <button class="buy" onclick="selectGame('LEGO Piratas do Caribe', 20)">Comprar</button>
+            <button onclick="selectGame('LEGO Piratas do Caribe', 20)">Comprar</button>
           </div>
           <div class="card">
             <img src="lego-indiana1.jpg" alt="LEGO Indiana Jones I">
             <h3>LEGO Indiana Jones I</h3>
             <p class="price">R$ 15</p>
             <p>As aventuras clássicas do arqueólogo mais famoso.</p>
-            <button class="buy" onclick="selectGame('LEGO Indiana Jones I', 15)">Comprar</button>
+            <button onclick="selectGame('LEGO Indiana Jones I', 15)">Comprar</button>
           </div>
           <div class="card">
             <img src="lego-indiana2.jpg" alt="LEGO Indiana Jones II">
             <h3>LEGO Indiana Jones II</h3>
             <p class="price">R$ 20</p>
             <p>Novas histórias e fases em versão LEGO.</p>
-            <button class="buy" onclick="selectGame('LEGO Indiana Jones II', 20)">Comprar</button>
+            <button onclick="selectGame('LEGO Indiana Jones II', 20)">Comprar</button>
           </div>
         </div>
-        <button class="next">&#10095;</button>
+        <button class="next" onclick="moveCarousel(this, 1)">&#10095;</button>
       </div>
     </section>
 
-    <!-- Catálogo AÇÃO / TIRO -->
     <section id="acao">
       <h2>Catálogo AÇÃO / TIRO</h2>
       <div class="carousel">
-        <button class="prev">&#10094;</button>
+        <button class="prev" onclick="moveCarousel(this, -1)">&#10094;</button>
         <div class="carousel-track">
           <div class="card">
-            <img src="sniper-elite.jpg" alt="Sniper Elite">
+            <img src="atirador-elite.jpg" alt="Sniper Elite">
             <h3>Sniper Elite</h3>
             <p class="price">R$ 20</p>
             <p>Precisão e estratégia na Segunda Guerra Mundial.</p>
-            <button class="buy" onclick="selectGame('Sniper Elite', 20)">Comprar</button>
+            <button onclick="selectGame('Sniper Elite', 20)">Comprar</button>
           </div>
         </div>
-        <button class="next">&#10095;</button>
+        <button class="next" onclick="moveCarousel(this, 1)">&#10095;</button>
       </div>
     </section>
 
-    <!-- Finalizar Compra -->
-    <section id="finalizar">
+    <section id="compra">
       <h2>Finalizar Compra</h2>
 
-      <!-- Infos importantes (rosa neon, aviso em vermelho) -->
-      <div class="infos-importantes">
+      <div class="info-box">
         <h3>⚠️ Informações Importantes</h3>
-        <p>✅ Sua conta vem com <strong>transferência de licença ativa</strong>.</p>
-        <p>✅ Compra <strong>100% segura</strong> na nossa loja.</p>
-        <p class="alerta">❌ Após a compra, <strong>não haverá reembolso em alguns casos</strong>. Leia bem antes de finalizar.</p>
+        <p>✅ Sua conta vem com <b>transferência de licença ativa</b>.</p>
+        <p>✅ Compra <b>100% segura</b> na nossa loja.</p>
+        <p class="warning">❌ Após a compra, <b>não haverá reembolso</b> em alguns casos. Leia bem antes de finalizar.</p>
       </div>
 
-      <p id="selecionado">Selecione um produto acima para ver os detalhes.</p>
-      <button id="pix">Copiar Pix: 417.710.408-66</button>
-      <button id="whatsapp">Ir para o WhatsApp após a COMPRA</button>
+      <p id="selected-game">VOCÊ SELECIONOU: <span id="game-name"></span> - <span id="game-price"></span></p>
+
+      <button class="pix" onclick="copyPix()">Copiar Pix: 417.710.408-66</button>
+      <a id="whatsapp-link" href="https://wa.me/5511939053090" target="_blank">
+        <button class="whatsapp">Ir para o WhatsApp após a COMPRA</button>
+      </a>
     </section>
 
-    <!-- Contato -->
     <section id="contato">
       <h2>Contato</h2>
       <p>Entre em contato com o número abaixo para saber mais sobre a loja e os jogos disponíveis:</p>
-      <button id="whatsapp-contato">Ir para WhatsApp</button>
+      <a href="https://wa.me/5511939053090" target="_blank">
+        <button class="whatsapp">Ir para WhatsApp</button>
+      </a>
     </section>
   </main>
 
   <footer>
-    <button onclick="scrollToSection('top')" id="inicio">Início</button>
+    <button onclick="scrollToSection('logo')" class="inicio">Início</button>
     <p>© 2025 Jogos 360 Nevex</p>
   </footer>
 
